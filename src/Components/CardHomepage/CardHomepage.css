@@ -1,0 +1,27 @@
+.card-container{
+    justify-content: space-between;
+    height: 400px;
+    flex-wrap: nowrap;
+    padding: 3rem;
+    max-height: 400px;
+}
+
+.card-container-reverse{
+    flex-direction: row-reverse;
+}
+
+.card-caption{
+    flex-direction: column;
+    align-items: flex-start;
+    width: 60%;
+    height: 100%;
+    overflow: none;
+}
+
+.card-image-container{
+    width: 400px;
+}
+
+#card-image{
+    border: 5px solid #C6AD24;
+}

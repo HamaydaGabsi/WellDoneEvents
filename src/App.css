@@ -1,0 +1,40 @@
+.nav-title{
+  font-family: var(--nav-title-font);
+  font-size: var(--nav-title-font-size);
+  color: var(--nav-title-color) ;
+  font-weight: var(--nav-title-font-weight);
+  line-height: var(--nav-title-line-height);
+  letter-spacing: var(--nav-title-letter-spacing);
+  margin: var(--nav-title-margin-y) var(--nav-title-margin-x);
+  padding: var(--nav-title-padding);
+  border: var(--nav-title-border);
+  border-radius: var(--nav-title-border-radius);
+  text-decoration: none;
+}
+
+.nav-title:hover{
+  border-color: var(--nav-title-hover-border-color);
+  color: var(--nav-title-hover-color);
+}
+
+.nav-title:active{
+  border-color: var(--nav-title-active-border-color);
+}
+
+.title{
+  font-family: var(--title-font);
+  font-size: var(--title-font-size);
+  color: var(--title-color) ;
+  font-weight: var(--title-font-weight);
+  line-height: var(--title-line-height);
+  text-align: var(--title-text-align);
+}
+
+.commontext{
+  font-family: var(--commontext-font);
+  font-size: var(--commontext-font-size);
+  color: var(--commontext-color) ;
+  font-weight: var(--commontext-font-weight);
+  line-height: var(--commontext-line-height);
+  text-align: var(--commontext-text-align);
+}

@@ -1,0 +1,44 @@
+*{
+    box-sizing: border-box;
+}
+html,body {
+    height: 100%;
+}
+
+:root{
+    --nav-title-font : Cinzel Decorative;
+    --nav-title-font-size : 20px;
+    --nav-title-color : white;
+    --nav-title-hover-color : white;
+    --nav-title-active-color : white;
+    --nav-title-font-weight : 500;
+    --nav-title-letter-spacing : 0em;
+    --nav-title-line-height : 27px;
+    --nav-title-margin-x : 32px;
+    --nav-title-margin-y : auto;
+    --nav-title-padding-x : 8px;
+    --nav-title-padding-y : 8px;
+    --nav-title-padding : 8px;
+    --nav-title-border : 2px solid transparent;
+    --nav-title-border-radius : 10px;
+    --nav-title-hover-border-color :  #f3e38b;
+    --nav-title-active-border-color :  #C6AD24;
+
+    --commontext-font : Cherry Swash;
+    --commontext-font-size : 30px;
+    --commontext-font-weight : 400;
+    --commontext-letter-spacing : 0em;
+    --commontext-line-height : 40px;
+    --commontext-font-text-align : justify;
+
+    --title-font : var(--nav-title-font);
+    --title-font-size : 80px;
+    --title-font-weight :700;
+    --title-font-style : normal;
+    --title-font-line-height :108px;
+    --title-text-algn : left;
+    --title-color : #C6AD24;
+
+}
+
+
