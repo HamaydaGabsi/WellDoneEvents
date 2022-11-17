@@ -1,0 +1,7 @@
+.cardscontainer{
+    height : fit-content;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: nowrap;
+    align-items: center;
+}
