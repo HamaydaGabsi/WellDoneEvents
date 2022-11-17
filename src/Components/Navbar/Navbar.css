@@ -1,0 +1,18 @@
+nav{
+    height: 11vh;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    box-shadow: 0px 2px 5px black;
+}
+
+.nav-container{
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+#logo{
+    height: 140%;
+    top: -16px;
+}
