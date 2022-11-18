@@ -1,0 +1,8 @@
+.CardsContainer{
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin-top: 100px;
+    margin-left: 100px;
+    justify-content: space-around;
+    
+}

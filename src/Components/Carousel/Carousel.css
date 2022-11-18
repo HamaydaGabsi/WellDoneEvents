@@ -5,10 +5,7 @@
     position: static!important;
 }
 
-.nav-placeholder{
-    height: 11vh;
-    width: 100%;
-}
+
 
 .carousel-inner{
     height: inherit!important;

@@ -1,14 +1,12 @@
 import React from 'react';
-import Navbar from '../Components/Navbar/Navbar';
 import PhotoCarousel from '../Components/Carousel/Carousel';
-import CardsContainer from '../Components/CardsContainer/CardsContainer';
+import PostsContainer from '../Components/PostsContainer/PostsContainer';
 
 const Accueil = () => {
     return (
   <>
-    <Navbar />
     <PhotoCarousel />
-    <CardsContainer />
+    <PostsContainer />
   </>
   );
 }

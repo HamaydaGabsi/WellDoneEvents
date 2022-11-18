@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Carousel from 'react-bootstrap/Carousel';
 import photo from './DSC_0304.jpg';
 import photo1 from './IMG_0006.jpg';
@@ -10,33 +10,32 @@ const PhotoCarousel = () =>{
 
     return(
       <div className=" carousel-container">
-        <div className="nav-placeholder"></div>
-  <Carousel  fade>
-      <Carousel.Item>
-        <img
-          className="d-block w-100 h-100"
-          src={photo}
-          alt="First slide"
-        />
-      </Carousel.Item>
-      <Carousel.Item>
-        <img
-          className="d-block w-100 h-100"
-          src={photo1}
-          alt="Second slide"
-        />
+          <Carousel  fade>
+            <Carousel.Item>
+              <img
+                className="d-block w-100 h-100"
+                src={photo}
+                alt="First slide"
+              />
+            </Carousel.Item>
+            <Carousel.Item>
+              <img
+                className="d-block w-100 h-100"
+                src={photo1}
+                alt="Second slide"
+              />
 
-      </Carousel.Item>
-      <Carousel.Item>
-        <img
-          className="d-block w-100 h-100"
-          src={photo2}
-          alt="Third slide"
-        />
+            </Carousel.Item>
+            <Carousel.Item>
+              <img
+                className="d-block w-100 h-100"
+                src={photo2}
+                alt="Third slide"
+              />
 
-      </Carousel.Item>
-    </Carousel>
-  </div>
+            </Carousel.Item>
+          </Carousel>
+      </div>
     );
 }
 

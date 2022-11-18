@@ -15,9 +15,10 @@
 .nav-title:hover{
   border-color: var(--nav-title-hover-border-color);
   color: var(--nav-title-hover-color);
+  cursor: pointer;
 }
 
-.nav-title:active{
+.nav-title-true , .nav-title:active{
   border-color: var(--nav-title-active-border-color);
 }
 
@@ -37,4 +38,9 @@
   font-weight: var(--commontext-font-weight);
   line-height: var(--commontext-line-height);
   text-align: var(--commontext-text-align);
+}
+
+.nav-placeholder{
+  height: 11vh;
+  width: 100%;
 }

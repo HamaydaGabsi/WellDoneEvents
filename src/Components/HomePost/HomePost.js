@@ -1,5 +1,5 @@
 import React from 'react';
-import './CardHomepage.css';
+import './HomePost.css';
 import photo from './IMG_9745.jpg';
 
 const check_parity =(a) =>{
@@ -9,7 +9,7 @@ const check_parity =(a) =>{
   else return '';
 }
 
-const CardHomepage = ({setnb_cards , order}) =>{
+const HomePost = ({order}) =>{
 
   return (
     <div className ={`card-container card-container-${check_parity(order)} d-flex w-100 mb-3`}>
@@ -29,4 +29,4 @@ const CardHomepage = ({setnb_cards , order}) =>{
 
 }
 
-export default CardHomepage;
+export default HomePost;
