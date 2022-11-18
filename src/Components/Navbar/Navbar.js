@@ -3,8 +3,8 @@ import './Navbar.css'
 import logo from './logo.png'
 
 
-
 const Navbar = () =>{
+
     return (
         <nav className='fixed-top bg-dark d-flex'>
             <div className='d-flex w-100 h-100 nav-container'>

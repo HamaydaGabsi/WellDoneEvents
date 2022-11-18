@@ -39,6 +39,9 @@ html,body {
     --title-text-algn : left;
     --title-color : #C6AD24;
 
+
+    xlarge : 1200px;
+    large :1024px;
+    medium:768px;
+    small :375px;
 }
-
-
