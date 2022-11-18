@@ -1,0 +1,57 @@
+
+.footer {
+  color: white;
+  width: 100%;
+  height: 300px;
+
+  display: flex;
+  flex-direction: row;
+}
+
+.FooterLogo {
+
+  width: 25%;
+
+  padding-left: 40px;
+}
+
+.FooterLogo img {
+  width: auto;
+  height: 100%;
+}
+
+.FooterDesc {
+  margin-top: 24px;
+  width: 40%;
+}
+
+.DividerContainer {
+
+  width: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* margin: 43px 80px; */
+}
+
+.divider {
+  width: 0;
+  height: 80%;
+  border: 1px solid #FFFFFF;
+}
+
+.FooterMediaLinks {
+
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.MediaIcons{
+  margin-top: 24px;
+  width: 60%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
