@@ -7,14 +7,17 @@ const Navbar = () =>{
 
     return (
         <nav className='fixed-top bg-dark d-flex'>
-            <div className='d-flex w-100 h-100 nav-container'>
+            <div className='d-flex w-100  nav-container'>
+            <div className='nav-row-1'>
                 <a className='nav-title acceuil ' href='#home'>Acceuil</a>
-                <a className=' nav-title services ' href='#home'>Services</a>
-                <div className='h-100 image-container'>
-                    <img id='logo' className='position-relative' src={logo} alt="logo" />
+                <a className=' nav-title services ' href='#home'>Services</a></div>
+                <div className='h-100 image-container '>
+                    <img id='logo' className='position-relative nav-row-2' src={logo} alt="logo" />
                 </div>
+                <div className='nav-row-3'>
                 <a className=' nav-title lieux ' href='#home'>Lieux</a>
                 <a className='nav-title contact ' href='#home'>Contact</a>
+                </div>
             </div>
         </nav>
     )
