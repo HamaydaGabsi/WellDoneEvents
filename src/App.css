@@ -39,13 +39,11 @@
   line-height: var(--commontext-line-height);
   text-align: var(--commontext-text-align);
 }
-<<<<<<< HEAD
 
 .nav-placeholder{
   height: 11vh;
   width: 100%;
 }
-=======
 .footer-desc-text{
   font-family: var(--commontext-font);
   font-size: 24px;
@@ -62,4 +60,3 @@
 .footer-desc-title{
   font-size: 40px;
 }
->>>>>>> b39891a83e0c9f0c2d9f7007b8ea66847a5aaf03

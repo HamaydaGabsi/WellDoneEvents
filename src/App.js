@@ -2,6 +2,7 @@ import Accueil from './Pages/Accueil';
 import Services from './Pages/Services/Services';
 import Gallerie from './Pages/Gallerie';
 import Contact from './Pages/Contact';
+import Footer from './Components/Footer/Footer';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Route,Routes, useNavigate } from 'react-router-dom';
@@ -91,6 +92,7 @@ const navigation = {
       <Route path='/gallerie' element={<Gallerie />} />
       <Route path='/services' element={<Services />} />
     </Routes >
+    <Footer />
     </>
   );
 }
