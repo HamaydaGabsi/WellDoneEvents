@@ -1,5 +1,5 @@
 nav {
-    height: 11vh;
+    height: 7vh;
     justify-content: center;
     align-items: center;
     flex-wrap: nowrap;
@@ -13,9 +13,16 @@ nav {
     height: 100px;
     
 }
+.image-container{
+    height: 120px;
+    width: 120px;
+    background-color: var(--);
+    border-radius: 50%;
+    top: 10px;
+}
 #logo {
-    height: 140%;
-    top: -16px;
+    height: 100%;
+    top: 10px;
 }
 @media only screen and (max-width: 768px)  {
     nav{

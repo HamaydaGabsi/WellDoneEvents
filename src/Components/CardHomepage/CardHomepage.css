@@ -1,9 +1,10 @@
 .card-container{
     justify-content: space-between;
-    height: 400px;
+    height: 100%;
     flex-wrap: nowrap;
     padding: 3rem;
-    max-height: 400px;
+    max-height: 600px;
+
 }
 
 .card-container-reverse{
@@ -19,7 +20,9 @@
 }
 
 .card-image-container{
-    width: 400px;
+    width: 40%;
+    margin: 0 24px;
+    
 }
 
 #card-image{
