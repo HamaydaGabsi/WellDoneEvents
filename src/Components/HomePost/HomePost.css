@@ -1,4 +1,4 @@
-.card-container{
+.post-container{
     justify-content: space-between;
     height: 400px;
     flex-wrap: nowrap;
@@ -6,11 +6,11 @@
     max-height: 400px;
 }
 
-.card-container-reverse{
+.post-container-reverse{
     flex-direction: row-reverse;
 }
 
-.card-caption{
+.post-caption{
     flex-direction: column;
     align-items: flex-start;
     width: 60%;
@@ -18,10 +18,10 @@
     overflow: none;
 }
 
-.card-image-container{
+.post-image-container{
     width: 400px;
 }
 
-#card-image{
+#post-image{
     border: 5px solid #C6AD24;
 }

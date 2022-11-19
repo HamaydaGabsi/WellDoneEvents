@@ -12,6 +12,7 @@
     justify-content: center;
     visibility: hidden;
 }
+
 .shadow-cover-visible{
     visibility: visible ;
 }

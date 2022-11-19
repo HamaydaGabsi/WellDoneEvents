@@ -55,7 +55,6 @@ function App() {
       gallerie:false,
       home:false
     })
-    console.log(activelinks)
   }
 
   
