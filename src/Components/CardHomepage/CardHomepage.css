@@ -28,3 +28,48 @@
 #card-image{
     border: 5px solid #C6AD24;
 }
+
+@media only screen and (max-width: 1400px){
+    .card-container{
+
+        padding: 0.5rem;
+
+    
+    }
+}
+@media only screen and (max-width: 1024px){
+    .card-container{
+
+        padding: 0;
+
+    
+    }
+    .card-image-container{
+        width: 55%;
+        margin: 0 24px;
+        
+    }
+    .card-caption{
+
+        width: 45%;
+
+    }
+    
+}
+@media only screen and (max-width: 768px){
+    .card-container{
+        margin-top: 64px;
+        flex-wrap: wrap;
+    }
+    .card-image-container{
+        width: 100%;
+        margin:  48px 0;
+        
+    }
+    .card-caption{
+
+        width: 100%;
+
+    }
+    
+}
