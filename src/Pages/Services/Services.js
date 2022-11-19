@@ -1,10 +1,6 @@
-import React, { useEffect } from 'react';
+import React  from 'react';
 import ServiceCard from '../../Components/ServiceCard/ServiceCard.js'
 import './Services.css'
-
-
-
-
 
 
 const Services = () => {
