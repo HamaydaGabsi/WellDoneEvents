@@ -4,6 +4,7 @@
     flex-wrap: nowrap;
     padding: 3rem;
     max-height: 600px;
+    margin-bottom: 48px;
 
 }
 
@@ -42,7 +43,7 @@
 
         padding: 0;
 
-    
+        margin-bottom: 32px;
     }
     .card-image-container{
         width: 55%;
@@ -58,8 +59,9 @@
 }
 @media only screen and (max-width: 768px){
     .card-container{
-        margin-top: 64px;
+        /* margin-top: 64px; */
         flex-wrap: wrap;
+        margin-bottom: 16px;
     }
     .card-image-container{
         width: 100%;

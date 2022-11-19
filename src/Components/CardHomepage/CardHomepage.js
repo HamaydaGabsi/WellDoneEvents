@@ -12,7 +12,7 @@ const check_parity =(a) =>{
 const CardHomepage = ({setnb_cards , order}) =>{
 
   return (
-    <div className ={`card-container card-container-${check_parity(order)} d-flex w-100 mb-3`}>
+    <div className ={`card-container card-container-${check_parity(order)} d-flex w-100 `}>
         <div className='d-flex h-100 card-caption'>
             <div className='caption-title title'> TITLE ! </div>
             <div className='caption-p commontext'> 

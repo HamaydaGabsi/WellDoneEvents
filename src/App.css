@@ -39,14 +39,6 @@
   text-align: var(--commontext-text-align);
 }
 
-.footer-desc-text {
-  font-family: var(--commontext-font);
-  font-size: 24px;
-  color: white;
-  font-weight: var(--commontext-font-weight);
-  line-height: var(--commontext-line-height);
-  text-align: var(--commontext-text-align);
-}
 
 @media only screen and (max-width: 1200px) {
   .title {
@@ -71,8 +63,3 @@
 
 
 
-
-/* ************ footer styles ******** */
-.footer-desc-title {
-  font-size: 40px;
-}
