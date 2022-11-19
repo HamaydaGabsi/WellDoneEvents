@@ -1,11 +1,12 @@
 import WDlogo from "./WDlogo.png";
 import facebookIcon from "./facebook.svg";
 import "./Footer.css";
+
 export default function Footer() {
   return (
     <div className="footer bg-dark">
       <div className="FooterLogo">
-        <img src={WDlogo}></img>
+        <img alt="" src={WDlogo}></img>
       </div>
       <div className="FooterDesc">
         <h2 className="title footer-desc-title ">Well Done events</h2>
@@ -24,19 +25,19 @@ export default function Footer() {
         </h4>
         <div className="MediaIcons">
           <a href="/">
-            <img
+            <img alt=""
               style={{ height: "24px", color: "#6383EA" }}
               src={facebookIcon}
             ></img>
           </a>
           <a href="/">
-            <img
+            <img alt=""
               style={{ height: "24px", color: "#6383EA" }}
               src={facebookIcon}
             ></img>
           </a>
           <a href="/">
-            <img
+            <img alt=""
               style={{ height: "24px", color: "#6383EA" }}
               src={facebookIcon}
             ></img>

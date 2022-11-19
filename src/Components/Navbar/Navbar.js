@@ -3,21 +3,22 @@ import './Navbar.css'
 import logo from './logo.png'
 
 
-const Navbar = () =>{
+const Navbar = ({navigation , activelinks}) =>{
 
+   
     return (
         <nav className='fixed-top bg-dark d-flex'>
             <div className='d-flex w-100  nav-container'>
             <div className='nav-row-1'>
-                <a className='nav-title acceuil ' href='#home'>Acceuil</a>
-                <a className=' nav-title services ' href='#home'>Services</a></div>
+                <span className={`nav-title nav-title-${activelinks.home}`} onClick={navigation.navigatetohome} >Acceuil</span>
+                <span className={`nav-title nav-title-${activelinks.services}`} onClick={navigation.navigatetoservices} >Services</span></div>
                 {/* add bg-dark,image-container and remove h-100  */}
-                <div className='h-100  '> 
-                    <img id='logo' className='position-relative nav-row-2' src={logo} alt="logo" />
-                </div>
+                    <div className='h-100  '> 
+                        <img id='logo' className='position-relative nav-row-2' src={logo} alt="logo" />
+                    </div>
                 <div className='nav-row-3'>
-                <a className=' nav-title lieux ' href='#home'>Lieux</a>
-                <a className='nav-title contact ' href='#home'>Contact</a>
+                <span className={`nav-title nav-title-${activelinks.gallerie}`} onClick={navigation.navigatetogallerie} >Gallerie</span>
+                <span className={`nav-title nav-title-${activelinks.contact}`} onClick={navigation.navigatetocontact} >Contact</span>
                 </div>
             </div>
         </nav>

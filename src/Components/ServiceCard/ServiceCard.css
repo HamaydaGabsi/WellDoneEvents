@@ -1,0 +1,24 @@
+.card-container{
+    height: 400px;
+    width: 300px;
+    border: 8px solid #C6AD24;
+    padding: 0;
+}
+
+.shadow-cover{
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    justify-content: center;
+    visibility: hidden;
+}
+
+.shadow-cover-visible{
+    visibility: visible ;
+}
+
+.cardtitle{
+    padding-top: 60px;
+    --title-font-size : 40px;
+    --title-color : white;
+}
