@@ -1,6 +1,6 @@
 import React from 'react';
 import './HomePost.css';
-import photo from './IMG_9745.jpg';
+
 
 const check_parity =(a) =>{
   if( a % 2 === 0){
@@ -9,20 +9,18 @@ const check_parity =(a) =>{
   else return '';
 }
 
-const HomePost = ({order}) =>{
+const HomePost = ({order , post}) =>{
 
   return (
     <div className ={`post-container post-container-${check_parity(order)} d-flex w-100 mb-3`}>
         <div className='d-flex h-100 post-caption'>
-            <div className='caption-title title'> TITLE ! </div>
+            <div className='caption-title title'> {post.title} </div>
             <div className='caption-p commontext'> 
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-              Atque eveniet unde harum mollitia quidem! Accusantium,
-              facere sequi pariatur dolorem sit cumque natus sint magnam nihil rerum dignissimos cum error quam?
+                {post.description}
             </div>
         </div>
         <div className='h-100 post-image-container'>
-            <img className='w-100 h-100' id='post-image' src={photo} alt="" />
+            <img className='w-100 h-100' id='post-image' src={post.image} alt="" />
         </div>
     </div>
   )
