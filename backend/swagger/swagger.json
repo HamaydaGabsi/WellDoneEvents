@@ -1,0 +1,466 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "version": "4.6.0", 
+      "title": "WELL DONE EVENTS",
+      "description": "API",
+      "license": {
+        "name": "MIT",
+        "url": "https://opensource.org/licenses/MIT"
+      }
+    },
+    "host": "localhost:5000",
+    "basePath": "/",
+    "tags": [
+      {
+        "name": "Well Done Events API",
+        "description": "API for users in the system"
+      }
+    ],
+    "schemes": ["http"],
+    "consumes": ["application/json"],
+    "produces": ["application/json"],
+    "paths": {
+        "/api/carousel/add/carousel": {
+          "post": {
+            "tags": ["Carousels"],
+            "summary": "add new carousel",
+            "parameters": [
+                {
+                  "name": "image",
+                  "required": true,
+                  "type": "file"
+                }
+              ],
+            "responses": {
+              "200": {
+                
+              }
+            }
+          }
+        },
+        "/api/carousel/delete/carousel/:id": {
+            "delete": {
+              "tags": ["Carousels"],
+              "summary": "delete carousel",
+              "responses": {
+                "200": {
+                },
+                "400":{
+                }
+              }
+            }
+          },
+          "/api/carousel/modify/carousel/:id": {
+            "put": {
+              "tags": ["Carousels"],
+              "summary": "modify activation of carousel",
+              "parameters": [
+                {
+                  "name": "isActive",
+                  "required": true,
+                  "type": "boolean"
+                }
+              ],
+              "responses": {
+                "200": {
+                },
+                "400":{
+                }
+              }
+            }
+          },
+          "/api/carousel/active/carousels": {
+            "get": {
+              "tags": ["Carousels"],
+              "summary": "get only activated carousels",
+              "responses": {
+                "200": {
+                },
+                "400":{
+                }
+              }
+            }
+          },
+          "/api/carousel/all/carousels": {
+            "get": {
+              "tags": ["Carousels"],
+              "summary": "get all carousels",
+              "responses": {
+                "200": {
+                },
+                "400":{
+                }
+              }
+            }
+          },
+          "/api/accueil/add/image": {
+            "post": {
+              "tags": ["Accueil Posts"],
+              "summary": "add new accueil post image",
+              "parameters": [
+                  {
+                    "name": "image",
+                    "required": true,
+                    "type": "file"
+                  }
+                ],
+              "responses": {
+                "200": {
+                  
+                }
+              }
+            }
+          },
+          "/api/accueil/add/post/:id": {
+            "put": {
+              "tags": ["Accueil Posts"],
+              "summary": "add title and description to existing posts || you can modify title or description or isActive in one or double or all /except image",
+              "parameters": [
+                  {
+                    "name": "title",
+                    "type": "string"
+                  },
+                  {
+                    "name": "description",
+                    "type": "string"
+                  },
+                  {
+                    "name": "isActive",
+                    "type": "Boolean"
+                  }
+                ],
+              "responses": {
+                "200": {
+                  
+                },
+                "400":{}
+              }
+            }
+          },
+          "/api/accueil/delete/post/:id": {
+            "delete": {
+              "tags": ["Accueil Posts"],
+              "summary": "delete accueil post",
+              "responses": {
+                "200": {},
+                "400":{}
+              }
+            }
+          },
+          "/api/accueil/modify/image/:id": {
+            "put": {
+              "tags": ["Accueil Posts"],
+              "summary": "modify image of accueil post",
+              "parameters": [
+                {
+                  "name": "image",
+                  "required": true,
+                  "type": "file"
+                }
+              ],
+              "responses": {
+                "200": {},
+                "400":{}
+              }
+            }
+          },
+          "/api/accueil/active/post": {
+            "get": {
+              "tags": ["Accueil Posts"],
+              "summary": "get active accueil posts",
+              "responses": {
+                "200": {},
+                "400":{}
+              }
+            }
+          },
+          "/api/accueil/all/post": {
+            "get": {
+              "tags": ["Accueil Posts"],
+              "summary": "get all accueil posts",
+              "responses": {
+                "200": {},
+                "400":{}
+              }
+            }
+          },
+          "/api/services/add/image": {
+            "post": {
+              "tags": ["Service Posts"],
+              "summary": "add new Service post image",
+              "parameters": [
+                  {
+                    "name": "image",
+                    "required": true,
+                    "type": "file"
+                  }
+                ],
+              "responses": {
+                "200": {
+                  
+                }
+              }
+            }
+          },
+          "/api/services/add/post/:id": {
+            "put": {
+              "tags": ["Service Posts"],
+              "summary": "add title and description to existing posts || you can modify title or description or isActive in one or double or all /except image",
+              "parameters": [
+                  {
+                    "name": "title",
+                    "type": "string"
+                  },
+                  {
+                    "name": "isActive",
+                    "type": "Boolean"
+                  }
+                ],
+              "responses": {
+                "200": {
+                  
+                },
+                "400":{}
+              }
+            }
+          },
+          "/api/services/delete/post/:id": {
+            "delete": {
+              "tags": ["Service Posts"],
+              "summary": "delete Service post",
+              "responses": {
+                "200": {},
+                "400":{}
+              }
+            }
+          },
+          "/api/services/modify/image/:id": {
+            "put": {
+              "tags": ["Service Posts"],
+              "summary": "modify image of Service post",
+              "parameters": [
+                {
+                  "name": "image",
+                  "required": true,
+                  "type": "file"
+                }
+              ],
+              "responses": {
+                "200": {},
+                "400":{}
+              }
+            }
+          },
+          "/api/services/active/post": {
+            "get": {
+              "tags": ["Service Posts"],
+              "summary": "get active Service posts",
+              "responses": {
+                "200": {},
+                "400":{}
+              }
+            }
+          },
+          "/api/services/all/post": {
+            "get": {
+              "tags": ["Service Posts"],
+              "summary": "get all Service posts",
+              "responses": {
+                "200": {},
+                "400":{}
+              }
+            }
+          },
+          "/api/lieux/add/images": {
+            "post": {
+              "tags": ["Lieux Posts"],
+              "summary": "add images && create post",
+              "parameters":[
+                {
+                  "name":"images",
+                  "type":"file"
+                }
+              ],
+              "responses": {
+                "200": {},
+                "400":{}
+              }
+            }
+          },
+          "/api/lieux/add/post/:id": {
+            "put": {
+              "tags": ["Lieux Posts"],
+              "summary": "complete creation of post",
+              "parameters":[
+                {
+                  "name":"title",
+                  "type":"string"
+                }
+              ],
+              "responses": {
+                "200": {},
+                "400":{}
+              }
+            }
+          },
+          "/api/lieux/edit/post/:id": {
+            "put": {
+              "tags": ["Lieux Posts"],
+              "summary": "edit title || isActive || both",
+              "parameters":[
+                {
+                  "name":"title",
+                  "type":"string"
+                },
+                {
+                  "name":"isActive",
+                  "type":"Boolean"
+                }
+              ],
+              "responses": {
+                "200": {},
+                "400":{}
+              }
+            }
+          },
+          "/api/lieux/delete/post/:id": {
+            "delete": {
+              "tags": ["Lieux Posts"],
+              "summary": "delete post by id",
+              "responses": {
+                "200": {},
+                "400":{}
+              }
+            }
+          },
+          "/api/lieux/delete/image/:id": {
+            "put": {
+              "tags": ["Lieux Posts"],
+              "summary": "delete image",
+              "parameters":[
+                {
+                  "name":"imageurl",
+                  "type":"String"
+                }
+              ],
+              "responses": {
+                "200": {},
+                "400":{}
+              }
+            }
+          },
+          "/api/lieux/add/images/post/:id": {
+            "put": {
+              "tags": ["Lieux Posts"],
+              "summary": "Add image(s)",
+              "parameters":[
+                {
+                  "name":"images",
+                  "type":"file(s)"
+                }
+              ],
+              "responses": {
+                "200": {},
+                "400":{}
+              }
+            }
+          },
+          "/api/lieux/get/all/active": {
+            "get": {
+              "tags": ["Lieux Posts"],
+              "summary": "get _id's & title of active posts",
+              "responses": {
+                "200": {},
+                "400":{}
+              }
+            }
+          },
+          "/api/lieux/get/active/lieux/:id": {
+            "get": {
+              "tags": ["Lieux Posts"],
+              "summary": "get _id's & images of selected posts",
+              "responses": {
+                "200": {},
+                "400":{}
+              }
+            }
+          },
+          "/api/lieux/get/All/lieux": {
+            "get": {
+              "tags": ["Lieux Posts"],
+              "summary": "get _id's & title of all posts",
+              "responses": {
+                "200": {},
+                "400":{}
+              }
+            }
+          }
+      },
+      "definitions": {
+        "Carousel": {
+          "properties": {
+            "_id":{
+              "type":"String"
+            },
+            "image": {
+              "type": "file"
+            },
+            "isActive":{
+                "type": "boolean"
+            }
+          }
+        },
+        "Accueil": {
+          "properties": {
+            "_id":{
+              "type":"String"
+            },
+            "title": {
+              "type": "String"
+            },
+            "description": {
+              "type": "String"
+            },
+            "image": {
+              "type": "String"
+            },
+            "isActive":{
+                "type": "boolean"
+            }
+          }
+        },
+        "Services": {
+          "properties": {
+            "_id":{
+              "type":"String"
+            },
+            "title": {
+              "type": "String"
+            },
+            "image": {
+              "type": "String"
+            },
+            "isActive":{
+                "type": "boolean"
+            }
+          }
+        },
+        "Lieux": {
+          "properties": {
+            "_id":{
+              "type":"String"
+            },
+            "title": {
+              "type": "String"
+            },
+            "images": {
+              "type": "String"
+            },
+            "isActive":{
+                "type": "boolean"
+            }
+          }
+        }
+      }
+  }

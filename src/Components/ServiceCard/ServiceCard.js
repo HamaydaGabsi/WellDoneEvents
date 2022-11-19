@@ -5,8 +5,8 @@ import './ServiceCard.css'
 const ServiceCard = () =>{
     
     return(
-        <div className='card-container'>
-            <div className={` shadow-cover-visible shadow-cover d-flex`}>
+        <div className='card-container '>
+            <div className='shadow-cover shadow-cover-visible d-flex'>
                 <div className='cardtitle title'>
                     TITLE !
                 </div>
