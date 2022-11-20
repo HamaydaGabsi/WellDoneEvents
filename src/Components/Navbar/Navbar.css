@@ -18,11 +18,37 @@ nav {
     width: auto;
     display: flex;
     justify-content: center;
+    border-radius: 50%;
+    transition: 0.5s ease-in-out;;
 }
 #logo {
     height: 100%;
     top: 10px;
+    transition: 0.5s ease-in-out;;
 }
+.phone-navbar{
+    transition: all 0.5s ease-in-out;;
+
+}
+
+.phone-navbar-min{
+    height: 7vh;
+    transition: 0.5s ease-in-out;;
+}
+.phone-navbar-min .nav-row-1, .phone-navbar-min .nav-row-3{
+   display: none;
+   transition: 0.5s ease-in-out;
+}
+.phone-navbar-min .image-container{
+        height: 120px;
+        width: 105px;
+        border-radius: 50%;
+}
+.phone-navbar-min #logo {
+    height: 100%;
+    top: 10px;
+}
+
 @media only screen and (max-width: 768px)  {
     nav{
         height: 22vh;
@@ -35,16 +61,18 @@ nav {
     .nav-row-1,.nav-row-3 {
         display: flex;
         flex-direction: column;
+        transition: 0.5s ease-in-out;
     }
     .nav-row-1 *,.nav-row-3 * {
         margin: 16px !important;
         text-align: center;
-
+        transition: 0.5s ease-in-out;;
     }
     #logo {
         height: 70%;
         top: 30px;
     }
+
    
 }
 @media only screen and (max-width: 375px)  {
