@@ -16,7 +16,7 @@ const PostsContainer = ({posts}) =>{
         )
     }
     return (
-        <div className=" my-5 mx-5 d-flex cardscontainer">
+        <div className="d-flex cardscontainer">
             {generate_posts(posts)}
         </div>
     );

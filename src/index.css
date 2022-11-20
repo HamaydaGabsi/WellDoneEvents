@@ -25,20 +25,22 @@ html,body {
     --nav-title-active-border-color :  #C6AD24;
 
     --commontext-font : Cherry Swash;
-    --commontext-font-size : 30px;
+    --commontext-font-size : 26px;
     --commontext-font-weight : 400;
     --commontext-letter-spacing : 0em;
     --commontext-line-height : 40px;
     --commontext-font-text-align : justify;
 
     --title-font : var(--nav-title-font);
-    --title-font-size : 80px;
+    --title-font-size : 75px;
     --title-font-weight :700;
     --title-font-style : normal;
     --title-font-line-height :108px;
     --title-text-algn : left;
     --title-color : #C6AD24;
 
+    --xlarge : 1200px;
+    --large :1024px;
+    --medium:768px;
+    --small :375px;
 }
-
-

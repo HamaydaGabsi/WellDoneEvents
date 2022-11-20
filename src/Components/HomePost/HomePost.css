@@ -1,9 +1,11 @@
 .post-container{
     justify-content: space-between;
-    height: 400px;
+    height: 100%;
     flex-wrap: nowrap;
     padding: 3rem;
-    max-height: 400px;
+    max-height: 600px;
+    margin-bottom: 48px;
+
 }
 
 .post-container-reverse{
@@ -19,9 +21,59 @@
 }
 
 .post-image-container{
-    width: 400px;
+    width: 40%;
+    margin: 0 24px;
+    
 }
 
 #post-image{
     border: 5px solid #C6AD24;
+}
+
+@media only screen and (max-width: 1400px){
+    .post-container{
+
+        padding: 0.5rem;
+
+    
+    }
+}
+@media only screen and (max-width: 1024px){
+    .post-container{
+
+        padding: 0;
+
+        margin-bottom: 32px;
+    }
+    .post-image-container{
+        width: 55%;
+        margin: 0 24px;
+        
+    }
+    .post-caption{
+        
+        width: 45%;
+
+    }
+    
+}
+@media only screen and (max-width: 768px){
+    .post-container{
+        /* margin-top: 64px; */
+        flex-wrap: wrap;
+        margin-bottom: 16px;
+        max-height: 800px;
+    }
+    .post-image-container{
+        width: 100%;
+        margin:  48px 0;
+        
+    }
+    .post-caption{
+        margin-top: 40px;
+        
+        width: 100%;
+
+    }
+    
 }
