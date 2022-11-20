@@ -8,7 +8,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Route,Routes, useNavigate } from 'react-router-dom';
 import Navbar from './Components/Navbar/Navbar';
 import NavPlaceholder from './Components/NavPlaceholder/NavPlaceholder.js';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 
 
@@ -16,46 +16,65 @@ import { useState } from 'react';
 function App() {
 
   const navigate = useNavigate();
-  const [activelinks , setactivelinks] = useState({
-    home : true ,
-    services : false ,
-    gallerie : false ,
-    contact : false
-  }) 
+  let Hometrue = {
+    home:true,
+    contact:false,
+    gallerie:false,
+    services:false,
+  }
+  const Servicetrue = {
+    services:true,
+    home:false,
+    contact:false,
+    gallerie:false,
+  }
+  const Gallerietrue ={
+    gallerie:true,
+    contact:false,
+    services:false,
+    home:false,
+  }
+  const Contacttrue = {
+    contact:true,
+    services:false,
+    gallerie:false,
+    home:false
+  }
+
+  let activestate = JSON.parse( sessionStorage.getItem('activelinks'));
+  const [activelinks , setactivelinks] = useState(Hometrue) 
+  
+
   const setlinks=(link) =>{
     
     if(link === 'home')
-    setactivelinks(
     {
-      home:true,
-      contact:false,
-      gallerie:false,
-      services:false,
-    })
+    sessionStorage.setItem('activelinks',JSON.stringify(Hometrue))
+    activestate = JSON.parse( sessionStorage.getItem('activelinks'));
+    setactivelinks(activestate)
+   
+  }
     else if(link === 'services')
-    setactivelinks(
     {
-      services:true,
-      home:false,
-      contact:false,
-      gallerie:false,
-    })
+      sessionStorage.setItem('activelinks',JSON.stringify(Servicetrue))
+      activestate = JSON.parse( sessionStorage.getItem('activelinks'));
+      setactivelinks(activestate)
+      
+    }
     else if(link === 'gallerie')
-    setactivelinks(
     {
-      gallerie:true,
-      contact:false,
-      services:false,
-      home:false,
-    })
+      sessionStorage.setItem('activelinks',JSON.stringify(Gallerietrue))
+      activestate = JSON.parse( sessionStorage.getItem('activelinks'));
+      setactivelinks(activestate)
+      
+    }
     else if(link === 'contact')
-    setactivelinks(
     {
-      contact:true,
-      services:false,
-      gallerie:false,
-      home:false
-    })
+      sessionStorage.setItem('activelinks',JSON.stringify(Contacttrue))
+      activestate = JSON.parse( sessionStorage.getItem('activelinks'));
+      setactivelinks(activestate)
+      
+    }
   }
 
   
@@ -79,6 +98,7 @@ const navigatetocontact =() =>{
 const navigation = {
   navigatetohome , navigatetocontact , navigatetogallerie , navigatetoservices}
 
+  useEffect(()=>{sessionStorage.setItem('activelinks', JSON.stringify(Hometrue))}, [])
   return (
     <>
     <Navbar
