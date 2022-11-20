@@ -1,34 +1,23 @@
-import React , {useEffect, useState} from "react";
+import React from "react";
 import './PostsContainer.css'
 import HomePost from "../HomePost/HomePost";
 
-const PostsContainer = () =>{
-    const general_post = {
-        title : 'title',
-        description : 'description',
-        image :''
-    }
-    const [posts , setposts] = useState([general_post,general_post,general_post,general_post])
-   
+const PostsContainer = ({posts}) =>{
 
-    const fetch_posts = () =>{
-        fetch('http://localhost:5000/api/accueil/active/post')
-        .then(response => response.json())
-        .then(data => {
-            if(data.data.length !== 0)
-            setposts(data.data)
-        })
-
+    const createPost = (post,index) =>{
+        return (
+            <HomePost order={index} post= {post} />
+        )
     }
 
-    useEffect(fetch_posts, [])
-
+    const generate_posts = (posts) =>{
+        return posts.map(
+            createPost
+        )
+    }
     return (
         <div className=" my-5 mx-5 d-flex cardscontainer">
-            <HomePost order={0} post= {posts[0]} />
-            <HomePost order={1} post= {posts[1]} />
-            <HomePost order={2} post= {posts[2]} />
-            <HomePost order={3} post= {posts[3]} />
+            {generate_posts(posts)}
         </div>
     );
 

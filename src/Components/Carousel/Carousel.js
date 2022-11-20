@@ -3,21 +3,29 @@ import Carousel from 'react-bootstrap/Carousel';
 import './Carousel.css'
 
 
+const create_carousel_item = (carousel) =>{
+  return(
+    <Carousel.Item  >
+        <img
+         className="d-block w-100 h-100"
+          src={carousel.image}
+          alt="First slide"
+              />
+    </Carousel.Item>
+  )
+}
+const generate_carousel = (carousels) => {
+  return carousels.map(create_carousel_item)
+}
+
 
 
 const PhotoCarousel = ({carousels}) =>{
 
-
     return(
       <div className=" carousel-container">
           <Carousel  fade>
-            <Carousel.Item  className="carousel-item-1">
-              <img
-                className="d-block w-100 h-100"
-                src={carousels[0].image}
-                alt="First slide"
-              />
-            </Carousel.Item>
+            {generate_carousel(carousels)}
           </Carousel>
       </div>
     );
