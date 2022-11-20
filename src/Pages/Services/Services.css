@@ -1,5 +1,5 @@
 .CardsContainer{
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: nowrap;
     margin: 100px 100px;
     justify-content: space-around;

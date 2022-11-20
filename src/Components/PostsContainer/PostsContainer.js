@@ -2,14 +2,22 @@ import React from "react";
 import './PostsContainer.css'
 import HomePost from "../HomePost/HomePost";
 
-const PostsContainer = () =>{
+const PostsContainer = ({posts}) =>{
 
+    const createPost = (post,index) =>{
+        return (
+            <HomePost order={index} post= {post} />
+        )
+    }
+
+    const generate_posts = (posts) =>{
+        return posts.map(
+            createPost
+        )
+    }
     return (
         <div className="d-flex cardscontainer">
-            <HomePost order={0} />
-            <HomePost order={1} />
-            <HomePost order={2} />
-            <HomePost order={3} />
+            {generate_posts(posts)}
         </div>
     );
 
