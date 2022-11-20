@@ -14,11 +14,10 @@ nav {
     
 }
 .image-container{
-    height: 120px;
-    width: 120px;
-    background-color: var(--);
-    border-radius: 50%;
-    top: 10px;
+    height: 100%;
+    width: auto;
+    display: flex;
+    justify-content: center;
 }
 #logo {
     height: 100%;
@@ -55,3 +54,10 @@ nav {
     }
 }
 
+@media only screen and (min-width: 768px){
+    .image-container{
+        height: 120px;
+        width: 120px;
+        border-radius: 50%;
+    }
+}

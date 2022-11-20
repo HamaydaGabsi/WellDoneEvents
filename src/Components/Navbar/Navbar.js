@@ -13,7 +13,7 @@ const Navbar = ({navigation , activelinks}) =>{
                 <span className={`nav-title nav-title-${activelinks.home}`} onClick={navigation.navigatetohome} >Acceuil</span>
                 <span className={`nav-title nav-title-${activelinks.services}`} onClick={navigation.navigatetoservices} >Services</span></div>
                 {/* add bg-dark,image-container and remove h-100  */}
-                    <div className='h-100  '> 
+                    <div className='bg-dark image-container   '> 
                         <img id='logo' className='position-relative nav-row-2' src={logo} alt="logo" />
                     </div>
                 <div className='nav-row-3'>
