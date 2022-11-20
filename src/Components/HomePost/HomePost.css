@@ -20,7 +20,7 @@
     overflow: none;
 }
 
-.card-image-container{
+.post-image-container{
     width: 40%;
     margin: 0 24px;
     
@@ -31,7 +31,7 @@
 }
 
 @media only screen and (max-width: 1400px){
-    .card-container{
+    .post-container{
 
         padding: 0.5rem;
 
@@ -39,37 +39,39 @@
     }
 }
 @media only screen and (max-width: 1024px){
-    .card-container{
+    .post-container{
 
         padding: 0;
 
         margin-bottom: 32px;
     }
-    .card-image-container{
+    .post-image-container{
         width: 55%;
         margin: 0 24px;
         
     }
-    .card-caption{
-
+    .post-caption{
+        
         width: 45%;
 
     }
     
 }
 @media only screen and (max-width: 768px){
-    .card-container{
+    .post-container{
         /* margin-top: 64px; */
         flex-wrap: wrap;
         margin-bottom: 16px;
+        max-height: 800px;
     }
-    .card-image-container{
+    .post-image-container{
         width: 100%;
         margin:  48px 0;
         
     }
-    .card-caption{
-
+    .post-caption{
+        margin-top: 40px;
+        
         width: 100%;
 
     }
