@@ -42,7 +42,7 @@ function App() {
   }
 
   let activestate = JSON.parse( sessionStorage.getItem('activelinks'));
-  const [activelinks , setactivelinks] = useState(activestate) 
+  const [activelinks , setactivelinks] = useState(Hometrue) 
   
 
   const setlinks=(link) =>{
