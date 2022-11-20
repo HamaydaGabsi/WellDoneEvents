@@ -57,7 +57,7 @@ nav {
 @media only screen and (min-width: 768px){
     .image-container{
         height: 120px;
-        width: 120px;
+        width: 105px;
         border-radius: 50%;
     }
 }
