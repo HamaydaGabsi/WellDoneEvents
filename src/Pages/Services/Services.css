@@ -3,5 +3,9 @@
     flex-wrap: nowrap;
     margin: 100px 100px;
     justify-content: space-around;
-    
+}
+@media only screen and (max-width: 1200px){
+    .CardsContainer{
+        margin: 24px;
+    }
 }

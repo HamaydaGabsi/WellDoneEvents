@@ -1,24 +1,26 @@
-.card-container{
+.card-container {
     height: 400px;
     width: 300px;
     border: 8px solid #C6AD24;
     padding: 0;
 }
 
-.shadow-cover{
+.shadow-cover {
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
     justify-content: center;
     visibility: hidden;
+
 }
 
-.shadow-cover-visible{
-    visibility: visible ;
+.shadow-cover-visible {
+    visibility: visible;
+
 }
 
 .bg-image {
-    position : relative;
+    position: relative;
     width: 100%;
     height: 100%;
     top: -100%;
@@ -28,11 +30,12 @@
 .bg-image img {
     width: 100%;
     height: 100%;
-    position:relative ;
+    position: relative;
     z-index: -1;
 }
-.cardtitle{
+
+.cardtitle {
     padding-top: 60px;
-    --title-font-size : 40px;
-    --title-color : white;
+    --title-font-size: 40px;
+    --title-color: white;
 }
