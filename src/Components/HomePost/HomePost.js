@@ -20,7 +20,7 @@ const HomePost = ({order , post}) =>{
             </div>
         </div>
         <div className='h-100 post-image-container'>
-            <img className='w-100 h-100' id='post-image' src={post.image} alt="" />
+            <img className='' id='post-image' src={post.image} alt="" />
         </div>
     </div>
   )
