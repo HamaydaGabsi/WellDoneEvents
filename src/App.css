@@ -10,16 +10,19 @@
   border: var(--nav-title-border);
   border-radius: var(--nav-title-border-radius);
   text-decoration: none;
+  transition: 0.5s ease-in-out;
 }
 
 .nav-title:hover {
   border-color: var(--nav-title-hover-border-color);
   color: var(--nav-title-hover-color);
   cursor: pointer;
+  transition: 0.5s ease-in-out;
 }
 
 .nav-title-true , .nav-title:active{
   border-color: var(--nav-title-active-border-color);
+  
 }
 
 .title {
