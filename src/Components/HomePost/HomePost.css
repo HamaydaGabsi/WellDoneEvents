@@ -1,4 +1,4 @@
-.post-container{
+.post-container {
     justify-content: space-between;
     height: 100%;
     flex-wrap: nowrap;
@@ -8,11 +8,11 @@
 
 }
 
-.post-container-reverse{
+.post-container-reverse {
     flex-direction: row-reverse;
 }
 
-.post-caption{
+.post-caption {
     flex-direction: column;
     align-items: flex-start;
     width: 60%;
@@ -20,14 +20,14 @@
     overflow: none;
 }
 
-.post-image-container{
+.post-image-container {
     width: 40%;
     margin: 0 24px;
-    
-    
+
+
 }
 
-#post-image{
+#post-image {
     border: 5px solid #C6AD24;
     max-width: 100%;
     max-height: 550px;
@@ -35,50 +35,55 @@
     width: auto;
 }
 
-@media only screen and (max-width: 1400px){
-    .post-container{
+@media only screen and (max-width: 1400px) {
+    .post-container {
 
         padding: 0.5rem;
 
-    
     }
 }
-@media only screen and (max-width: 1024px){
-    .post-container{
+
+@media only screen and (max-width: 1024px) {
+    .post-container {
 
         padding: 0;
 
         margin-bottom: 32px;
     }
-    .post-image-container{
+
+    .post-image-container {
         width: 55%;
         margin: 0 24px;
-        
+
     }
-    .post-caption{
-        
+
+    .post-caption {
+
         width: 45%;
 
     }
-    
+
 }
-@media only screen and (max-width: 768px){
-    .post-container{
+
+@media only screen and (max-width: 768px) {
+    .post-container {
         /* margin-top: 64px; */
         flex-wrap: wrap;
         margin-bottom: 16px;
         max-height: 800px;
     }
-    .post-image-container{
+
+    .post-image-container {
         width: 100%;
-        margin:  48px 0;
-        
+        margin: 48px 0;
+
     }
-    .post-caption{
+
+    .post-caption {
         margin-top: 40px;
-        
+
         width: 100%;
 
     }
-    
+
 }

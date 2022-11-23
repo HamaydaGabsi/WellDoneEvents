@@ -99,6 +99,7 @@ const navigation = {
   navigatetohome , navigatetocontact , navigatetogallerie , navigatetoservices}
 
   useEffect(()=>{sessionStorage.setItem('activelinks', JSON.stringify(Hometrue))}, [])
+  
   return (
     <>
     <Navbar
