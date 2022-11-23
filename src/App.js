@@ -8,7 +8,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Route,Routes, useNavigate } from 'react-router-dom';
 import Navbar from './Components/Navbar/Navbar';
 import NavPlaceholder from './Components/NavPlaceholder/NavPlaceholder.js';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 
 
@@ -16,7 +16,7 @@ import { useEffect, useState } from 'react';
 function App() {
 
   const navigate = useNavigate();
-  let Hometrue = {
+  const Hometrue = {
     home:true,
     contact:false,
     gallerie:false,
@@ -28,7 +28,7 @@ function App() {
     contact:false,
     gallerie:false,
   }
-  const Gallerietrue ={
+  const Gallerietrue = {
     gallerie:true,
     contact:false,
     services:false,
@@ -41,64 +41,50 @@ function App() {
     home:false
   }
 
-  let activestate = JSON.parse( sessionStorage.getItem('activelinks'));
   const [activelinks , setactivelinks] = useState(Hometrue) 
-  
 
   const setlinks=(link) =>{
-    
     if(link === 'home')
     {
-    sessionStorage.setItem('activelinks',JSON.stringify(Hometrue))
-    activestate = JSON.parse( sessionStorage.getItem('activelinks'));
-    setactivelinks(activestate)
-   
-  }
+    setactivelinks(Hometrue)
+    }
     else if(link === 'services')
     {
-      sessionStorage.setItem('activelinks',JSON.stringify(Servicetrue))
-      activestate = JSON.parse( sessionStorage.getItem('activelinks'));
-      setactivelinks(activestate)
-      
+      setactivelinks(Servicetrue)
     }
     else if(link === 'gallerie')
     {
-      sessionStorage.setItem('activelinks',JSON.stringify(Gallerietrue))
-      activestate = JSON.parse( sessionStorage.getItem('activelinks'));
-      setactivelinks(activestate)
-      
+      setactivelinks(Gallerietrue)
     }
     else if(link === 'contact')
     {
-      sessionStorage.setItem('activelinks',JSON.stringify(Contacttrue))
-      activestate = JSON.parse( sessionStorage.getItem('activelinks'));
-      setactivelinks(activestate)
-      
+      setactivelinks(Contacttrue)
     }
   }
 
   
 
-const navigatetohome = () =>{
+  const navigatetohome = () =>{
   navigate('/');
   setlinks('home')
-}
-const navigatetoservices =() =>{
+  }
+  const navigatetoservices =() =>{
   navigate('/services')
   setlinks('services')
-}
-const navigatetogallerie =() =>{
+  }
+  const navigatetogallerie =() =>{
   navigate('/gallerie')
   setlinks('gallerie')
-}
-const navigatetocontact =() =>{
+  }
+  const navigatetocontact =() =>{
   navigate('/contact')
   setlinks('contact')
-}
-const navigation = {
-  navigatetohome , navigatetocontact , navigatetogallerie , navigatetoservices}
+  }
+  const navigation = {
+  navigatetohome , navigatetocontact , navigatetogallerie , navigatetoservices
+  }
 
-  useEffect(()=>{sessionStorage.setItem('activelinks', JSON.stringify(Hometrue))}, [])
+  
   return (
     <>
     <Navbar
@@ -107,8 +93,8 @@ const navigation = {
       />
     <NavPlaceholder />
     <Routes>
-      <Route path='/' element={<Accueil  />} />
-      <Route path='/contact' element={<Contact />} />
+      <Route path='/'         element={<Accueil  />} />
+      <Route path='/contact'  element={<Contact />} />
       <Route path='/gallerie' element={<Gallerie />} />
       <Route path='/services' element={<Services />} />
     </Routes >
