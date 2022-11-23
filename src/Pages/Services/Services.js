@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from "react";
-import "./Services.css";
-import Cardsrow from "../../Components/Cardsrow/Cardsrow.js";
-import test_image from "../../Components/HomePost/IMG_9745.jpg";
+import React, { useEffect, useState }  from 'react';
+import './Services.css'
+import Cardsrow from '../../Components/Cardsrow/Cardsrow.js';
 
 const Services = () => {
   //Responsiveness
@@ -39,24 +38,16 @@ const Services = () => {
     });
   };
 
-  const general_card = {
-    title: "TITLE",
-    image: test_image,
-  };
-  const [cards, setcards] = useState([
-    general_card,
-    general_card,
-    general_card,
-    general_card,
-  ]);
+    const [cards , setcards] = useState([])
 
-  const fetch_cards = () => {
-    fetch("/api/services/active/post")
-      .then((response) => response.json())
-      .then((data) => {
-        if (data.data.length !== 0) setcards(data.data);
-      });
-  };
+    const fetch_cards=() => {
+        fetch('http://localhost:5000/api/services/active/post')
+        .then(response => response.json())
+        .then(data => {
+            console.log(data)
+            setcards(data.data)
+        })
+    }
 
   useEffect(fetch_cards, []);
   useEffect(cover_animation);

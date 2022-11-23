@@ -4,7 +4,10 @@
 html,body {
     height: 100%;
 }
-
+.nav-placeholder{
+    height: 7vh;
+    width: 100%;
+}
 :root{
     --nav-title-font : Cinzel Decorative;
     --nav-title-font-size : 20px;
