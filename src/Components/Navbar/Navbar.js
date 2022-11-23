@@ -29,15 +29,16 @@ const Navbar = ({ navigation, activelinks }) => {
 
     prevScrollpos = currentScrollPos;
   };
-//   useEffect(()=>{
-    
-//     if(activelinks.gallerie){
-//         console.log(activelinks.gallerie)
-//         document.getElementById('nav').classList.add('doubleNav');
-//         }
-//     }
-//   ,[]);
- 
+  //   useEffect(()=>{
+
+  //     if(activelinks.gallerie){
+  //         console.log(activelinks.gallerie)
+  //         document.getElementById('nav').classList.add('doubleNav');
+  //         }
+  //     }
+  //   ,[])
+  const lieux = ["liex1", "liex2", "liex3", "liex4", "liex5", "liex6"];
+
   return (
     <nav className="fixed-top bg-dark d-flex" id="nav">
       <div className="d-flex w-100  nav-container">
@@ -79,6 +80,30 @@ const Navbar = ({ navigation, activelinks }) => {
           </span>
         </div>
       </div>
+      <div className="secondary-navbar ">
+        {lieux.map((e, index) => {
+          if (index == parseInt(lieux.length / 2)-1)
+            return (
+              <div style={{display:'flex'}}>
+                <span
+                  className={`nav-title nav-title-${activelinks.gallerie} secondary-nav-title `}
+                >
+                  {e}
+                </span>
+                <span className="empty-title" style={{width:'100px'}}></span>
+              </div>
+            );
+          else
+            return (
+              <span
+                className={`nav-title nav-title-${activelinks.gallerie} secondary-nav-title `}
+              >
+                {e}
+              </span>
+            );
+        })}
+      </div>
+      <div className="secondary-navbar-background"></div>
     </nav>
   );
 };

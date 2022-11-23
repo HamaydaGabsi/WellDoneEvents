@@ -38,6 +38,7 @@ html,body {
     --title-font-line-height :108px;
     --title-text-algn : left;
     --title-color : #C6AD24;
+    --dark-color :rgba(var(--bs-dark-rgb),var(--bs-bg-opacity));
 
     --xlarge : 1200px;
     --large :1024px;
