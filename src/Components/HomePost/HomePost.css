@@ -28,6 +28,7 @@
 
 #post-image{
     border: 5px solid #C6AD24;
+    max-height: 550px;
 }
 
 @media only screen and (max-width: 1400px){
