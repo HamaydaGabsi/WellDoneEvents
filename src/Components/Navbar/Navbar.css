@@ -11,7 +11,7 @@ nav {
     justify-content: center;
     align-items: center;
     flex-wrap: nowrap;
-    height: 100px;
+    height: 11vh;
 
 }
 
@@ -40,28 +40,20 @@ nav {
 }
 
 .secondary-navbar {
-    height: 7vh;
-    /* background-color:#C6AD24; */
+    min-height: 7vh;
+    height: fit-content;
+    background-color: #C6AD24;
     width: 100%;
     z-index: 1000;
     position: relative;
-    top: calc(-34px  + 5vh);
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     display: none;
     transition: all 0.3s;
+    
 }
 
-.secondary-navbar-background {
-    height: 7vh;
-    background-color: #C6AD24;
-    width: 100%;
-    z-index: -10;
-    position: relative;
-    top: calc(-34px - 2vh);
-    display: none;
-    transition: all 0.3s;
-}
 
 .secondary-nav-title {
     z-index: 30;
@@ -71,12 +63,18 @@ nav {
 .doubleNav .secondary-navbar , .doubleNav .secondary-navbar-background{
     display: flex;
 }
-.doubleNav {
-    height: 12vh;
-}
-.doubleNav .nav-row-1,
+
+
+@media only screen and (min-width: 768px) {
+    .doubleNav {
+        height: 12vh;
+    }
+    .doubleNav .nav-row-1,
 .doubleNav .nav-row-3 {
     top: 0;
+}
+.secondary-navbar{
+    margin-top: 8px;}
 }
 @media only screen and (max-width: 768px) {
     nav {
@@ -85,7 +83,7 @@ nav {
 
     .nav-container {
         flex-direction: row;
-        height: 200px;
+        height: 100%;
         justify-content: space-around;
     }
 

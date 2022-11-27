@@ -1,8 +1,8 @@
-import React, { useEffect } from "react";
+import React, { useEffect ,componentDidUpdate} from "react";
 import "./Navbar.css";
 import logo from "./logo.png";
 
-const Navbar = ({ navigation, activelinks }) => {
+const Navbar = ({ navigation, activelinks, setNavbarHeight, navbarHeight }) => {
   //navbar animation
   var prevScrollpos = window.pageYOffset;
   window.onresize = function () {
@@ -29,31 +29,27 @@ const Navbar = ({ navigation, activelinks }) => {
 
     prevScrollpos = currentScrollPos;
   };
-
-    // useEffect(()=>{
-    //     console.log("use effect")
-    //     console.log(activelinks.gallerie)
-    //   if(activelinks.gallerie){
-    //       console.log('inside gallerie')
-    //       document.getElementById('nav').classList.add('doubleNav');
-    //       } 
-    //       else{
-    //         document.getElementById('nav').classList.remove('doubleNav')
-    //       }
-    //   }
-    // ,[])
   const lieux = ["lieux1", "lieux2", "lieux3", "lieux4", "lieux5", "lieux6"];
-
+  useEffect(() => {
+    setNavbarHeight(
+      document.getElementById("nav-bottom").getBoundingClientRect().top
+    );
+  });
   return (
-    <nav className="fixed-top bg-dark d-flex" id="nav"
-    onClick={(e)=>{
-        const gallerie= document.getElementById('gallerie');
-        if(e.target==gallerie){
-            document.getElementById('nav').classList.add('doubleNav')}
-            else {
-                document.getElementById('nav').classList.remove('doubleNav')
-            }
-    }}>
+    <nav
+      className="fixed-top bg-dark d-flex"
+      id="nav"
+      onClick={(e) => {
+        const gallerie = document.getElementById("gallerie");
+        if (e.target == gallerie) {
+          document.getElementById("nav").classList.add("doubleNav");
+          document.getElementById("body").classList.add("doubleNav-active");
+        } else {
+          document.getElementById("nav").classList.remove("doubleNav");
+          document.getElementById("body").classList.remove("doubleNav-active");
+        }
+      }}
+    >
       <div className="d-flex w-100  nav-container">
         <div className="nav-row-1">
           <span
@@ -82,8 +78,7 @@ const Navbar = ({ navigation, activelinks }) => {
           <span
             className={`nav-title nav-title-${activelinks.gallerie}`}
             onClick={navigation.navigatetogallerie}
-            id='gallerie'
-            
+            id="gallerie"
           >
             Gallerie
           </span>
@@ -98,28 +93,10 @@ const Navbar = ({ navigation, activelinks }) => {
 
       <div className="secondary-navbar ">
         {lieux.map((e, index) => {
-          if (index == parseInt(lieux.length / 2)-1)
-            return (
-              <div style={{display:'flex'}}>
-                <span
-                  className={`nav-title nav-title-${activelinks.gallerie} secondary-nav-title `}
-                >
-                  {e}
-                </span>
-                <span className="empty-title" style={{width:'100px'}}></span>
-              </div>
-            );
-          else
-            return (
-              <span
-                className={`nav-title nav-title-${activelinks.gallerie} secondary-nav-title `}
-              >
-                {e}
-              </span>
-            );
+          return <span className={`nav-title  secondary-nav-title `}>{e}</span>;
         })}
       </div>
-      <div className="secondary-navbar-background"></div>
+      <div id="nav-bottom" style={{width: '100%'}}></div>
     </nav>
   );
 };
