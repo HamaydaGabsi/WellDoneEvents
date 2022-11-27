@@ -1,16 +1,23 @@
-.carousel{
-    top:80px;
+.carousel {
+    top: 80px;
     height: 90vh;
     width: 100%;
-    position: static!important;
+    position: static !important;
+}
+
+.carousel-container {
+    top: -37px;
+    position: relative;
+
 }
 
 
 
-.carousel-inner{
-    height: inherit!important;
-    width : inherit !important;
+.carousel-inner {
+    height: inherit !important;
+    width: inherit !important;
 }
-.carousel-item{
+
+.carousel-item {
     height: inherit !important;
 }

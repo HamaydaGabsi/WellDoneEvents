@@ -2,88 +2,151 @@ nav {
     height: 7vh;
     justify-content: center;
     align-items: center;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     box-shadow: 0px 2px 5px black;
+    transition: all 0.3s;
 }
 
 .nav-container {
     justify-content: center;
     align-items: center;
     flex-wrap: nowrap;
-    height: 100px;
-    
+    height: 11vh;
+
 }
-.image-container{
+
+.image-container {
     height: 100%;
     width: auto;
     display: flex;
     justify-content: center;
     border-radius: 50%;
-    transition: 0.3s ease-in-out;;
+    transition: 0.3s ease-in-out;
+    ;
 }
+
 #logo {
     height: 100%;
     top: 10px;
-    transition: 0.3s ease-in-out;;
+    transition: 0.3s ease-in-out;
+    ;
 }
 
 
-@media only screen and (max-width: 768px)  {
-    nav{
+.nav-row-1,
+.nav-row-3 {
+    position: relative;
+    top: -15px;
+}
+
+.secondary-navbar {
+    min-height: 7vh;
+    height: fit-content;
+    background-color: #C6AD24;
+    width: 100%;
+    z-index: 1000;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    display: none;
+    transition: all 0.3s;
+    
+}
+
+
+.secondary-nav-title {
+    z-index: 30;
+    color: rgb(33, 37, 41) !important;
+    font-weight: bold;
+}
+.doubleNav .secondary-navbar , .doubleNav .secondary-navbar-background{
+    display: flex;
+}
+
+
+@media only screen and (min-width: 768px) {
+    .doubleNav {
+        height: 12vh;
+    }
+    .doubleNav .nav-row-1,
+.doubleNav .nav-row-3 {
+    top: 0;
+}
+.secondary-navbar{
+    margin-top: 8px;}
+}
+@media only screen and (max-width: 768px) {
+    nav {
         height: 22vh;
     }
-    .nav-container{
+
+    .nav-container {
         flex-direction: row;
-        height:200px;
+        height: 100%;
         justify-content: space-around;
     }
-    .nav-row-1,.nav-row-3 {
+
+    .nav-row-1,
+    .nav-row-3 {
         display: flex;
         flex-direction: column;
         transition: 0.3s ease-in-out;
     }
-    .nav-row-1 *,.nav-row-3 * {
+
+    .nav-row-1 *,
+    .nav-row-3 * {
         margin: 16px !important;
         text-align: center;
-        transition: 0.3s ease-in-out;;
+        transition: 0.3s ease-in-out;
+        ;
     }
+
     #logo {
         height: 70%;
         top: 30px;
     }
-    .phone-navbar{
-        transition: all 0.3s ease-in-out;;
-    
+
+    .phone-navbar {
+        transition: all 0.3s ease-in-out;
+        ;
+
     }
-    
-    .phone-navbar-min{
+
+    .phone-navbar-min {
         height: 7vh;
-        transition: 0.3s ease-in-out;;
+        transition: 0.3s ease-in-out;
+        ;
     }
-    .phone-navbar-min .nav-row-1, .phone-navbar-min .nav-row-3{
-       display: none;
-       transition: 0.3s ease-in-out;
+
+    .phone-navbar-min .nav-row-1,
+    .phone-navbar-min .nav-row-3 {
+        display: none;
+        transition: 0.3s ease-in-out;
     }
-    .phone-navbar-min .image-container{
-            height: 120px;
-            width: 105px;
-            border-radius: 50%;
+
+    .phone-navbar-min .image-container {
+        height: 120px;
+        width: 105px;
+        border-radius: 50%;
     }
+
     .phone-navbar-min #logo {
         height: 100%;
         top: 10px;
     }
-   
+
 }
-@media only screen and (max-width: 375px)  {
+
+@media only screen and (max-width: 375px) {
     #logo {
         height: 50%;
         top: 50px;
     }
 }
 
-@media only screen and (min-width: 768px){
-    .image-container{
+@media only screen and (min-width: 768px) {
+    .image-container {
         height: 120px;
         width: 105px;
         border-radius: 50%;

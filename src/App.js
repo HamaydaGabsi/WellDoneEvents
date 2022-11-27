@@ -14,7 +14,6 @@ import { useState } from 'react';
 
 
 function App() {
-
   const navigate = useNavigate();
   const Hometrue = {
     home:true,
@@ -35,11 +34,11 @@ function App() {
     home:false,
   }
   const Contacttrue = {
-    contact:true,
-    services:false,
-    gallerie:false,
-    home:false
-  }
+    contact: true,
+    services: false,
+    gallerie: false,
+    home: false,
+  };
 
   
   const [activelinks , setactivelinks] = useState(Hometrue) 
@@ -91,21 +90,45 @@ function App() {
   navigatetohome , navigatetocontact , navigatetogallerie , navigatetoservices
   }
 
+  useEffect(() => {
+    sessionStorage.setItem("activelinks", JSON.stringify(Hometrue));
+  }, []);
+  const [navbarHeight, setNavbarHeight] = useState('0');
+  useEffect(() => {
+    setNavbarHeight(
+      document.getElementById("nav-bottom").getBoundingClientRect().top
+    );
+    console.log()
+  });
+  window.onresize = function () {
+    setNavbarHeight(
+      document.getElementById("nav-bottom").getBoundingClientRect().top
+    );
+  };
+
+  
   
   return (
     <>
-    <Navbar
-     navigation = {navigation}
-     activelinks = {activelinks}
+      <Navbar
+        navigation={navigation}
+        activelinks={activelinks}
+        navbarHeight={navbarHeight}
+        setNavbarHeight={setNavbarHeight}
       />
-    <NavPlaceholder />
-    <Routes>
-      <Route path='/'         element={<Accueil  />} />
-      <Route path='/contact'  element={<Contact />} />
-      <Route path='/gallerie' element={<Gallerie />} />
-      <Route path='/services' element={<Services />} />
-    </Routes >
-    <Footer />
+      <div
+        className="body"
+        id="body"
+        style={{ marginTop: navbarHeight.toString()+'px' }}
+      >
+        <Routes>
+          <Route path="/" element={<Accueil />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/gallerie" element={<Gallerie />} />
+          <Route path="/services" element={<Services />} />
+        </Routes>
+      </div>
+      <Footer />
     </>
   );
 }
