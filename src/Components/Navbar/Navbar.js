@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./Navbar.css";
 import logo from "./logo.png";
 
@@ -29,14 +29,6 @@ const Navbar = ({ navigation, activelinks }) => {
 
     prevScrollpos = currentScrollPos;
   };
-//   useEffect(()=>{
-    
-//     if(activelinks.gallerie){
-//         console.log(activelinks.gallerie)
-//         document.getElementById('nav').classList.add('doubleNav');
-//         }
-//     }
-//   ,[]);
  
   return (
     <nav className="fixed-top bg-dark d-flex" id="nav">

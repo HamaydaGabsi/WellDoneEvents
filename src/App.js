@@ -1,7 +1,7 @@
 import Accueil from './Pages/Accueil';
 import Services from './Pages/Services/Services';
 import Gallerie from './Pages/Gallerie';
-import Contact from './Pages/Contact';
+import Contact from './Pages/Contact/Contact';
 import Footer from './Components/Footer/Footer';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -41,25 +41,32 @@ function App() {
     home:false
   }
 
+  
   const [activelinks , setactivelinks] = useState(Hometrue) 
+  
 
   const setlinks=(link) =>{
     if(link === 'home')
     {
     setactivelinks(Hometrue)
+    sessionStorage.setItem('activelink','home')
     }
     else if(link === 'services')
     {
       setactivelinks(Servicetrue)
+      sessionStorage.setItem('activelink','services')
     }
     else if(link === 'gallerie')
     {
       setactivelinks(Gallerietrue)
+      sessionStorage.setItem('activelink','gallerie')
     }
     else if(link === 'contact')
     {
       setactivelinks(Contacttrue)
+      sessionStorage.setItem('activelink','contact')
     }
+    console.log(sessionStorage.getItem('activelink'))
   }
 
   
@@ -84,7 +91,6 @@ function App() {
   navigatetohome , navigatetocontact , navigatetogallerie , navigatetoservices
   }
 
-  
   
   return (
     <>
