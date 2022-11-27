@@ -29,18 +29,31 @@ const Navbar = ({ navigation, activelinks }) => {
 
     prevScrollpos = currentScrollPos;
   };
-  //   useEffect(()=>{
 
-  //     if(activelinks.gallerie){
-  //         console.log(activelinks.gallerie)
-  //         document.getElementById('nav').classList.add('doubleNav');
-  //         }
-  //     }
-  //   ,[])
-  const lieux = ["liex1", "liex2", "liex3", "liex4", "liex5", "liex6"];
+    // useEffect(()=>{
+    //     console.log("use effect")
+    //     console.log(activelinks.gallerie)
+    //   if(activelinks.gallerie){
+    //       console.log('inside gallerie')
+    //       document.getElementById('nav').classList.add('doubleNav');
+    //       } 
+    //       else{
+    //         document.getElementById('nav').classList.remove('doubleNav')
+    //       }
+    //   }
+    // ,[])
+  const lieux = ["lieux1", "lieux2", "lieux3", "lieux4", "lieux5", "lieux6"];
 
   return (
-    <nav className="fixed-top bg-dark d-flex" id="nav">
+    <nav className="fixed-top bg-dark d-flex" id="nav"
+    onClick={(e)=>{
+        const gallerie= document.getElementById('gallerie');
+        if(e.target==gallerie){
+            document.getElementById('nav').classList.add('doubleNav')}
+            else {
+                document.getElementById('nav').classList.remove('doubleNav')
+            }
+    }}>
       <div className="d-flex w-100  nav-container">
         <div className="nav-row-1">
           <span
@@ -69,6 +82,8 @@ const Navbar = ({ navigation, activelinks }) => {
           <span
             className={`nav-title nav-title-${activelinks.gallerie}`}
             onClick={navigation.navigatetogallerie}
+            id='gallerie'
+            
           >
             Gallerie
           </span>
@@ -80,6 +95,7 @@ const Navbar = ({ navigation, activelinks }) => {
           </span>
         </div>
       </div>
+
       <div className="secondary-navbar ">
         {lieux.map((e, index) => {
           if (index == parseInt(lieux.length / 2)-1)

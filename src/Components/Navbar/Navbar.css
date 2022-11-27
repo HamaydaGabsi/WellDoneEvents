@@ -4,6 +4,7 @@ nav {
     align-items: center;
     flex-wrap: wrap;
     box-shadow: 0px 2px 5px black;
+    transition: all 0.3s;
 }
 
 .nav-container {
@@ -47,6 +48,7 @@ nav {
     top: -34px;
     display: flex;
     justify-content: center;
+    display: none;
 }
 
 .secondary-navbar-background {
@@ -56,6 +58,7 @@ nav {
     z-index: -10;
     position: relative;
     top: calc(-34px - 7vh);
+    display: none;
 }
 
 .secondary-nav-title {
@@ -63,7 +66,16 @@ nav {
     color: rgb(33, 37, 41) !important;
     font-weight: bold;
 }
-
+.doubleNav .secondary-navbar , .doubleNav .secondary-navbar-background{
+    display: none;
+}
+.doubleNav {
+    height: 12vh;
+}
+.doubleNav .nav-row-1,
+.doubleNav .nav-row-3 {
+    top: 0;
+}
 @media only screen and (max-width: 768px) {
     nav {
         height: 22vh;
