@@ -395,7 +395,220 @@
                 "400":{}
               }
             }
+          },
+          "/api/contact/add/contact": {
+            "post": {
+              "tags": ["Contact"],
+              "summary": "add contact",
+              "parameters":[
+                {
+                  "name":"nom",
+                  "type":"String"
+                },
+                {
+                  "name":"prenom",
+                  "type":"String"
+                },{
+                  "name":"email",
+                  "type":"String"
+                },{
+                  "name":"telephone",
+                  "type":"String"
+                },{
+                  "name":"adress",
+                  "type":"String"
+                },{
+                  "name":"event",
+                  "type":"String"
+                },{
+                  "name":"date",
+                  "type":"String"
+                },{
+                  "name":"message",
+                  "type":"Array of string"
+                }
+              ],
+              "responses": {
+                "200": {},
+                "400":{}
+              }
+            }
+          },
+          "/api/contact/delete/contact/:id": {
+            "delete": {
+              "tags": ["Contact"],
+              "summary": "delete contact",
+              "responses": {
+                "200": {},
+                "400":{}
+              }
+            }
+          },
+          "/api/contact/modify/contact/:id": {
+            "put": {
+              "tags": ["Contact"],
+              "summary": "modify any information by one , double or multiple fields",
+              "parameters":[
+                {
+                  "name":"nom",
+                  "type":"String"
+                },
+                {
+                  "name":"prenom",
+                  "type":"String"
+                },{
+                  "name":"email",
+                  "type":"String"
+                },{
+                  "name":"telephone",
+                  "type":"String"
+                },{
+                  "name":"adress",
+                  "type":"String"
+                },{
+                  "name":"event",
+                  "type":"String"
+                },{
+                  "name":"date",
+                  "type":"String"
+                },{
+                  "name":"message",
+                  "type":"String"
+                }
+              ],
+              "responses": {
+                "200": {},
+                "400":{}
+              }
+            }
+          },
+          "/api/contact/get/contacts/:page": {
+            "get": {
+              "tags": ["Contact"],
+              "summary": "get all contacts with pagination and the number of pages",
+              "responses": {
+                "200": {},
+                "400":{}
+              }
+            }
+          },
+          "/api/contact/get/contact/bytel/:tel": {
+            "get": {
+              "tags": ["Contact"],
+              "summary": "get specefic contact by tel number",
+              "responses": {
+                "200": {},
+                "400":{}
+              }
+            }
+          },
+          "/api/social/add/social": {
+            "post": {
+              "tags": ["Social"],
+              "parameters":[
+                {
+                  "name":"tel",
+                  "type":"String"
+                },
+                {
+                  "name":"email",
+                  "type":"String"
+                },
+                {
+                  "name":"adress",
+                  "type":"String"
+                },
+                {
+                  "name":"facebook",
+                  "type":"String"
+                },
+                {
+                  "name":"youtube",
+                  "type":"String"
+                },
+                {
+                  "name":"instagram",
+                  "type":"String"
+                },
+                {
+                  "name":"twitter",
+                  "type":"String"
+                },
+                {
+                  "name":"whatsapp",
+                  "type":"String"
+                },
+                {
+                  "name":"pinterest",
+                  "type":"String"
+                }
+              ],
+              "summary": "don't use it !!! this method is not for normal usage just for maintenance when the document unormaly deleted (only one document of social media)",
+              "responses": {
+                "200": {},
+                "400":{}
+              }
+            }
+          },
+          "/api/social/add/social/url": {
+            "put": {
+              "tags": ["Social"],
+              "parameters":[
+                {
+                  "name":"tel",
+                  "type":"String"
+                },
+                {
+                  "name":"email",
+                  "type":"String"
+                },
+                {
+                  "name":"adress",
+                  "type":"String"
+                },
+                {
+                  "name":"facebook",
+                  "type":"String"
+                },
+                {
+                  "name":"youtube",
+                  "type":"String"
+                },
+                {
+                  "name":"instagram",
+                  "type":"String"
+                },
+                {
+                  "name":"twitter",
+                  "type":"String"
+                },
+                {
+                  "name":"whatsapp",
+                  "type":"String"
+                },
+                {
+                  "name":"pinterest",
+                  "type":"String"
+                }
+              ],
+              "summary": "add, modify or delete url of social media",
+              "responses": {
+                "200": {},
+                "400":{}
+              }
+            }
+          },
+          "/api/social/get/social": {
+            "get": {
+              "tags": ["Social"],
+              "summary": "get social media urls",
+              "responses": {
+                "200": {},
+                "400":{}
+              }
+            }
           }
+          
       },
       "definitions": {
         "Carousel": {
@@ -460,6 +673,71 @@
             "isActive":{
                 "type": "boolean"
             }
+          }
+        },
+        "Contact": {
+          "properties": {
+            "_id":{
+              "type":"String"
+            },
+            "nom":{
+              "type":"String"
+          },
+          "prenom":{
+              "type":"String"
+          },
+          "email":{
+              "type":"String"
+          },
+          "telephone":{
+              "type":"String"
+          },
+          "adress":{
+              "type":"String"
+          },
+          "event":{
+              "type":"String"
+          },
+          "date":{
+              "type":"String"
+          },
+          "message":{
+              "type":"String"
+          }
+          }
+        },
+        "Social": {
+          "properties": {
+            "_id":{
+              "type":"String"
+            },
+            "tel":{
+              "type":"String"
+          },
+          "email":{
+              "type":"String"
+          },
+          "adress":{
+              "type":"String"
+          },
+          "facebook":{
+              "type":"String"
+          },
+          "youtube":{
+              "type":"String"
+          },
+          "instagram":{
+              "type":"String"
+          },
+          "twitter":{
+              "type":"String"
+          },
+          "whatsapp":{
+              "type":"String"
+          },
+          "pinterest":{
+              "type":"String"
+          }
           }
         }
       }

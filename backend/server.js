@@ -29,6 +29,8 @@ app.use('/api/carousel',require('./Routes/carousel.js'));
 app.use('/api/accueil',require('./Routes/accueil'));
 app.use('/api/services',require('./Routes/services'));
 app.use('/api/lieux',require('./Routes/lieux'));
+app.use('/api/contact',require('./Routes/contact'));
+app.use('/api/social',require('./Routes/social'));
 
 //Run Server
 app.listen(process.env.PORT || 6000,(err)=>err?console.log("can't start server"):console.log(`server running on port ${process.env.PORT || 6000}`));
