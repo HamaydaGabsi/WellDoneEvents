@@ -1,8 +1,16 @@
-import React, { useEffect ,componentDidUpdate} from "react";
+import React, { useEffect , useState ,componentDidUpdate} from "react";
 import "./Navbar.css";
 import logo from "./logo.png";
 
-const Navbar = ({ navigation, activelinks, setNavbarHeight, navbarHeight }) => {
+const Navbar = ({navigation, activelinks, setNavbarHeight, navbarHeight , setId_lieux , fetch_gallerie }) => {
+
+  const [lieux , setlieux] = useState([])
+  const fetch_lieux = () =>{
+    fetch('http://localhost:5000/api/lieux/get/all/active')
+    .then(response => response.json())
+    .then(data => setlieux(data.data) )
+    .catch(err => console.error(err))
+  }
   //navbar animation
   var prevScrollpos = window.pageYOffset;
   window.onresize = function () {
@@ -29,12 +37,13 @@ const Navbar = ({ navigation, activelinks, setNavbarHeight, navbarHeight }) => {
 
     prevScrollpos = currentScrollPos;
   };
-  const lieux = ["lieux1", "lieux2", "lieux3", "lieux4", "lieux5", "lieux6"];
+
   useEffect(() => {
     setNavbarHeight(
       document.getElementById("nav-bottom").getBoundingClientRect().top
     );
   });
+  useEffect(fetch_lieux , [])
   return (
     <nav
       className="fixed-top bg-dark d-flex"
@@ -77,7 +86,10 @@ const Navbar = ({ navigation, activelinks, setNavbarHeight, navbarHeight }) => {
         <div className="nav-row-3">
           <span
             className={`nav-title nav-title-${activelinks.gallerie}`}
-            onClick={navigation.navigatetogallerie}
+            onClick={(e) => {
+              navigation.navigatetogallerie()
+              fetch_lieux()
+            }}
             id="gallerie"
           >
             Gallerie
@@ -93,7 +105,7 @@ const Navbar = ({ navigation, activelinks, setNavbarHeight, navbarHeight }) => {
 
       <div className="secondary-navbar ">
         {lieux.map((e, index) => {
-          return <span className={`nav-title  secondary-nav-title `}>{e}</span>;
+          return <span onClick={()=>{setId_lieux(e._id)}}  className={`${e._id} nav-title   secondary-nav-title `}>{e.title}</span>;
         })}
       </div>
       <div id="nav-bottom" style={{width: '100%'}}></div>

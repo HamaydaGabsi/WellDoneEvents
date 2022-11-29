@@ -1,6 +1,6 @@
 import Accueil from './Pages/Accueil';
 import Services from './Pages/Services/Services';
-import Gallerie from './Pages/Gallerie';
+import {Gallerie} from './Pages/Gallerie';
 import Contact from './Pages/Contact/Contact';
 import Footer from './Components/Footer/Footer';
 import './App.css';
@@ -8,7 +8,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Route,Routes, useNavigate } from 'react-router-dom';
 import Navbar from './Components/Navbar/Navbar';
 import NavPlaceholder from './Components/NavPlaceholder/NavPlaceholder.js';
-import { useState } from 'react';
+import { useState , useEffect } from 'react';
 
 
 
@@ -105,7 +105,7 @@ function App() {
       document.getElementById("nav-bottom").getBoundingClientRect().top
     );
   };
-
+  const [id_lieux , setId_lieux] = useState();
   
   
   return (
@@ -115,6 +115,7 @@ function App() {
         activelinks={activelinks}
         navbarHeight={navbarHeight}
         setNavbarHeight={setNavbarHeight}
+        setId_lieux={setId_lieux}
       />
       <div
         className="body"
@@ -124,7 +125,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Accueil />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/gallerie" element={<Gallerie />} />
+          <Route path="/gallerie" element={<Gallerie Id_lieux={id_lieux} />} />
           <Route path="/services" element={<Services />} />
         </Routes>
       </div>
