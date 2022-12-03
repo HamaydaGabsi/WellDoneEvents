@@ -7,3 +7,21 @@
 .container{
     width: 50%!important;
 }
+
+.sent {
+    background-color: rgb(42, 209, 42)!important;
+    border-color: rgb(42, 209, 42)!important ;
+}
+.invisible {
+    visibility: collapse;
+}
+.select-container {
+    flex-direction: column;
+}
+#date {
+    align-self: flex-start;
+}
+
+.no-height {
+    height: 0px !important;
+}

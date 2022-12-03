@@ -1,8 +1,8 @@
-import React, { useEffect , useState ,componentDidUpdate} from "react";
+import React, { useEffect , useState } from "react";
 import "./Navbar.css";
 import logo from "./logo.png";
 
-const Navbar = ({navigation, activelinks, setNavbarHeight, navbarHeight , setId_lieux , fetch_gallerie }) => {
+const Navbar = ({navigation, activelinks, setNavbarHeight, navbarHeight , setID}) => {
 
   const [lieux , setlieux] = useState([])
   const fetch_lieux = () =>{
@@ -50,7 +50,7 @@ const Navbar = ({navigation, activelinks, setNavbarHeight, navbarHeight , setId_
       id="nav"
       onClick={(e) => {
         const gallerie = document.getElementById("gallerie");
-        if (e.target == gallerie) {
+        if (e.target === gallerie) {
           document.getElementById("nav").classList.add("doubleNav");
           document.getElementById("body").classList.add("doubleNav-active");
         } else {
@@ -105,7 +105,9 @@ const Navbar = ({navigation, activelinks, setNavbarHeight, navbarHeight , setId_
 
       <div className="secondary-navbar ">
         {lieux.map((e, index) => {
-          return <span onClick={()=>{setId_lieux(e._id)}}  className={`${e._id} nav-title   secondary-nav-title `}>{e.title}</span>;
+          return <span
+           onClick={(f)=>{setID(e._id)}} 
+           className={`${e._id} nav-title   secondary-nav-title `}>{e.title}</span>;
         })}
       </div>
       <div id="nav-bottom" style={{width: '100%'}}></div>
@@ -113,4 +115,4 @@ const Navbar = ({navigation, activelinks, setNavbarHeight, navbarHeight , setId_
   );
 };
 
-export default Navbar;
+export { Navbar}

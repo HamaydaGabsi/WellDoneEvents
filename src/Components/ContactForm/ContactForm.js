@@ -1,25 +1,78 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './ContactForm.css'
 
 const ContactForm = () => {
   const [formStatus, setFormStatus] = React.useState('Send')
-
+  let otherstatus = false
+  const setotherstatus = () => {
+    const select = document.querySelector('#type')
+    if(select.value === 'Other') {
+    add_text_field()
+    otherstatus = true
+    }
+    else {
+      remove_text_field()
+      otherstatus = false
+    }
+  }
+ 
+  const remove_text_field = () => {
+    const text_field = document.querySelector('#other_text')
+    const container = document.querySelector('.other-container')
+    text_field.classList.add('invisible')
+    text_field.classList.add('no-height')
+    container.classList.add('no-height')
+    container.classList.remove('mb-3')
+  }
+  const add_text_field = () => {
+    const text_field = document.querySelector('#other_text')
+    const container = document.querySelector('.other-container')
+    text_field.classList.remove('invisible')
+    text_field.classList.remove('no-height')
+    container.classList.remove('no-height')
+    container.classList.add('mb-3')
+  }
+  useEffect(setotherstatus)
+  const togglebuttonclass = () => {
+    const button = document.querySelector('.submit')
+    button.classList.add('sent')
+  }
+  const send_from_info = (info) => {
+    fetch('http://localhost:5000/api/contact/add/contact',{
+      method: 'POST',
+      headers: {'content-type':'application/json'},
+      body: JSON.stringify(info)
+  })
+  .then(response => response.json())
+  .then(data => {
+    console.log(data)
+    if(data.message === 'contact added')
+   { setFormStatus('Sent')
+    togglebuttonclass()}
+  })
+  .catch(err => console.error(err))
+  }
   const onSubmit = (e) => {
     e.preventDefault()
     setFormStatus('Submitting...')
-    const { name, prénom, email, telephone,adresse, type, date , message } = e.target.elements
+    const { name, prénom, email, telephone,adresse, type, date , message , other_text } = e.target.elements
     let conFom = {
-      name: name.value,
-      prénom : prénom.value,
+      nom: name.value,
+      prenom : prénom.value,
       email: email.value,
       telephone : telephone.value,
-      adresse : adresse.value,
-      type : type.value,
+      adress : adresse.value,
+      event : type.value,
       date : date.value,
       message: message.value,
     }
+    if(otherstatus) {
+      conFom.event = other_text.value
+    }
+    send_from_info(conFom)
     console.log(conFom)
   }
+  
   return (
     <div className="container mt-5">
       <form onSubmit={onSubmit}>
@@ -57,20 +110,29 @@ const ContactForm = () => {
           required />
         </div>
         <div className="d-flex mb-3 w-100 input-container">
-        <select className='me-3 form-control d-inline-block' 
-        name="Type d'évènement" 
-        id="type" 
-        required>
-            <option value="volvo">Volvo</option>
-            <option value="saab">Saab</option>
-            <option value="opel">Opel</option>
-            <option value="">Other</option>
-        </select>
+          <div className='d-flex w-100 select-container'>
+            <select onChange={setotherstatus} className='me-3 form-control d-inline-block' 
+            name="Type d'évènement" 
+            id="type" 
+            required>
+                <option value="volvo">Volvo</option>
+                <option value="saab">Saab</option>
+                <option value="opel">Opel</option>
+                <option value="Other">Other</option>
+            </select>
+        </div>
           <input className="form-control ms-3 d-inline-block "
             type="text"
             id="date"
             placeholder='Date'
             required />
+        </div>
+        <div className='d-flex w-100 no-height input-container other-container'>
+        <input className="form-control no-height invisible  d-inline-block "
+          type="text"
+          id="other_text"
+          placeholder='other'
+          />
         </div>
         <div className="mb-3">
           <textarea className="form-control" 
@@ -78,7 +140,7 @@ const ContactForm = () => {
           placeholder='Message'
           required />
         </div>
-        <button className="btn btn-danger mb-3" type="submit">
+        <button className="btn submit btn-danger mb-3" type="submit">
           {formStatus}
         </button>
       </form>
