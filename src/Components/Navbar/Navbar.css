@@ -43,9 +43,9 @@ nav {
 }
 
 .secondary-navbar {
-    min-height: 7vh;
+    min-height: 6vh;
     height: fit-content;
-    background-color: #C6AD24;
+    background-color:rgb(33, 37, 41);
     width: 100%;
     z-index: 1000;
     position: relative;
@@ -60,7 +60,7 @@ nav {
 
 .secondary-nav-title {
     z-index: 30;
-    color: rgb(33, 37, 41) !important;
+
     font-weight: bold;
     --nav-title-font-size : 15px!important;
 }
