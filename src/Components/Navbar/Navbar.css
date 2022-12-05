@@ -70,13 +70,13 @@ nav {
 
 
 @media only screen and (min-width: 768px) {
-    .doubleNav {
+    /* .doubleNav {
         height: 12vh;
     }
     .doubleNav .nav-row-1,
 .doubleNav .nav-row-3 {
     top: 0;
-}
+} */
 .secondary-navbar{
     margin-top: 8px;}
 }
