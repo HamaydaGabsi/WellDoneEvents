@@ -5,7 +5,7 @@
 }
 
 .container{
-    width: 50%!important;
+    width: 35%!important;
 }
 
 .sent {
@@ -24,4 +24,20 @@
 
 .no-height {
     height: 0px !important;
+}
+
+.button-container {
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+}
+
+
+.formstatus {
+    font-size: 1em!important;
+}
+.submit {
+    background-color: black!important;
+    border-color: #C6AD24!important;
+    border-width: 3px!important;
 }

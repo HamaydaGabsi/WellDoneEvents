@@ -5,8 +5,8 @@ const Contact = () =>{
     return (
         <div className="d-flex contact-container">
             <ContactForm />
-            <div className="info me-5 d-flex">
-                <ul className="my-auto mx-auto">
+            <div className="info me-5 w-50  d-flex">
+                <ul className="my-auto info-list  commontext mx-auto">
                     <li>Numéro de téléphone: +216 00 000 000</li>
                     <li>Email: xxx@gmail.com</li>
                     <li>Adresse: 000 xxx 0000</li>

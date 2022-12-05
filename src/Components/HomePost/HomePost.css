@@ -26,6 +26,10 @@
 
 
 }
+.caption-p {
+    text-align: justify;
+    font-style: normal;
+}
 
 #post-image {
     border: 5px solid #C6AD24;

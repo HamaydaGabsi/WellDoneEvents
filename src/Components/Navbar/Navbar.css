@@ -22,7 +22,10 @@ nav {
     justify-content: center;
     border-radius: 50%;
     transition: 0.3s ease-in-out;
-    ;
+}
+
+.image-container:hover{
+    cursor: pointer;
 }
 
 #logo {
@@ -59,6 +62,7 @@ nav {
     z-index: 30;
     color: rgb(33, 37, 41) !important;
     font-weight: bold;
+    --nav-title-font-size : 15px!important;
 }
 .doubleNav .secondary-navbar , .doubleNav .secondary-navbar-background{
     display: flex;

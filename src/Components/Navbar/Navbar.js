@@ -43,6 +43,11 @@ const Navbar = ({navigation, activelinks, setNavbarHeight, navbarHeight , setID}
       document.getElementById("nav-bottom").getBoundingClientRect().top
     );
   });
+
+  const hideSecondaryNavbar = () => {
+    document.getElementById("nav").classList.remove("doubleNav");
+    document.getElementById("body").classList.remove("doubleNav-active");
+  }
   useEffect(fetch_lieux , [])
   return (
     <nav
@@ -53,29 +58,35 @@ const Navbar = ({navigation, activelinks, setNavbarHeight, navbarHeight , setID}
         if (e.target === gallerie) {
           document.getElementById("nav").classList.add("doubleNav");
           document.getElementById("body").classList.add("doubleNav-active");
-        } else {
-          document.getElementById("nav").classList.remove("doubleNav");
-          document.getElementById("body").classList.remove("doubleNav-active");
-        }
+        } 
       }}
     >
       <div className="d-flex w-100  nav-container">
         <div className="nav-row-1">
           <span
             className={`nav-title nav-title-${activelinks.home}`}
-            onClick={navigation.navigatetohome}
+            onClick={(e) => {
+              hideSecondaryNavbar();
+              navigation.navigatetohome()
+            }
+            }
           >
             Acceuil
           </span>
           <span
             className={`nav-title nav-title-${activelinks.services}`}
-            onClick={navigation.navigatetoservices}
+            onClick={(e) => {
+              hideSecondaryNavbar();
+              navigation.navigatetoservices()}
+            }
           >
             Services
           </span>
         </div>
         {/* add bg-dark,image-container and remove h-100  */}
-        <div className="bg-dark image-container  ">
+        <div className="bg-dark image-container"
+        onClick={navigation.navigatetohome}
+        >
           <img
             id="logo"
             className="position-relative nav-row-2"
@@ -96,7 +107,10 @@ const Navbar = ({navigation, activelinks, setNavbarHeight, navbarHeight , setID}
           </span>
           <span
             className={`nav-title nav-title-${activelinks.contact}`}
-            onClick={navigation.navigatetocontact}
+            onClick={(e) => {
+              hideSecondaryNavbar();
+              navigation.navigatetocontact()}
+            }
           >
             Contact
           </span>

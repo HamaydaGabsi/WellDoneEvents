@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import './ContactForm.css'
 
 const ContactForm = () => {
-  const [formStatus, setFormStatus] = React.useState('Send')
+  const [formStatus, setFormStatus] = React.useState('Envoyer')
   let otherstatus = false
   const setotherstatus = () => {
     const select = document.querySelector('#type')
@@ -47,14 +47,14 @@ const ContactForm = () => {
   .then(data => {
     console.log(data)
     if(data.message === 'contact added')
-   { setFormStatus('Sent')
+   { setFormStatus('Envoyé')
     togglebuttonclass()}
   })
   .catch(err => console.error(err))
   }
   const onSubmit = (e) => {
     e.preventDefault()
-    setFormStatus('Submitting...')
+    setFormStatus('En cours')
     const { name, prénom, email, telephone,adresse, type, date , message , other_text } = e.target.elements
     let conFom = {
       nom: name.value,
@@ -131,7 +131,7 @@ const ContactForm = () => {
         <input className="form-control no-height invisible  d-inline-block "
           type="text"
           id="other_text"
-          placeholder='other'
+          placeholder='Other'
           />
         </div>
         <div className="mb-3">
@@ -140,9 +140,11 @@ const ContactForm = () => {
           placeholder='Message'
           required />
         </div>
+        <div className='button-container d-flex'>
         <button className="btn submit btn-danger mb-3" type="submit">
-          {formStatus}
+         <span className='commontext formstatus'> {formStatus} </span>
         </button>
+        </div>
       </form>
     </div>
   )
