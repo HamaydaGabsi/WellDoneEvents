@@ -9,12 +9,7 @@
 
 }
 
-.post-container-reverse .post-image-container {
-    align-items: flex-end;
-}
-.post-container-reverse {
-    flex-direction: row-reverse;
-}
+
 
 .post-caption {
     flex-direction: column;
@@ -27,8 +22,15 @@
 .post-image-container {
     width: 40%;
     margin: 0 24px;
+    display: flex;
+    justify-content: flex-end;
 
-
+}
+.post-container-reverse .post-image-container {
+    justify-content: flex-start;
+}
+.post-container-reverse {
+    flex-direction: row-reverse;
 }
 
 .caption-p {
