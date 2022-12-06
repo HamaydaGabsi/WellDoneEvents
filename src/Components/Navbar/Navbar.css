@@ -43,7 +43,6 @@ nav {
 }
 
 .secondary-navbar {
-    min-height: 6vh;
     height: fit-content;
     background-color:rgb(33, 37, 41);
     width: 100%;
@@ -63,7 +62,11 @@ nav {
 
     font-weight: bold;
     --nav-title-font-size : 15px!important;
+    border: none;
 }
+/* .secondary-nav-title:hover {
+    border: none;
+ } */
 .doubleNav .secondary-navbar , .doubleNav .secondary-navbar-background{
     display: flex;
 }
@@ -78,7 +81,9 @@ nav {
     top: 0;
 } */
 .secondary-navbar{
-    margin-top: 8px;}
+    margin-top: 8px;
+
+}
 }
 @media only screen and (max-width: 768px) {
     nav {
@@ -138,6 +143,9 @@ nav {
     .phone-navbar-min #logo {
         height: 100%;
         top: 10px;
+    }
+    .secondary-navbar{
+        margin-top: 27px;
     }
 
 }

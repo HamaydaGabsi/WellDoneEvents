@@ -76,6 +76,7 @@ const GallerieGrid = ({posts}) => {
     return (
         <div className='d-flex grid-container'>
             {generate_gallerie(posts)}    
+         
         </div>
     )
 }

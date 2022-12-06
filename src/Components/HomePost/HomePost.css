@@ -3,8 +3,9 @@
     height: 100%;
     flex-wrap: nowrap;
     padding: 3rem;
-    max-height: 600px;
+    /* max-height: 600px; */
     margin-bottom: 48px;
+    align-items: center;
 
 }
 
@@ -26,6 +27,7 @@
 
 
 }
+
 .caption-p {
     text-align: justify;
     font-style: normal;
@@ -69,17 +71,19 @@
 
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1024px) {
     .post-container {
         /* margin-top: 64px; */
         flex-wrap: wrap;
         margin-bottom: 16px;
-        max-height: 800px;
+        /* max-height: 800px; */
     }
 
     .post-image-container {
         width: 100%;
         margin: 48px 0;
+        isplay: flex;
+        justify-content: center;
 
     }
 

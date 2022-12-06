@@ -1,23 +1,30 @@
-
-
-.input-container{
+.input-container {
     justify-content: space-between;
 }
 
-.container{
-    width: 35%!important;
+.container {
+    width: 35% !important;
+}
+
+@media only screen and (max-width: 768px) {
+    .container{
+        width: 75%!important;
+    }
 }
 
 .sent {
-    background-color: rgb(42, 209, 42)!important;
-    border-color: rgb(42, 209, 42)!important ;
+    background-color: rgb(42, 209, 42) !important;
+    border-color: rgb(42, 209, 42) !important;
 }
+
 .invisible {
     visibility: collapse;
 }
+
 .select-container {
     flex-direction: column;
 }
+
 #date {
     align-self: flex-start;
 }
@@ -34,10 +41,11 @@
 
 
 .formstatus {
-    font-size: 1em!important;
+    font-size: 1em !important;
 }
+
 .submit {
-    background-color: black!important;
-    border-color: #C6AD24!important;
-    border-width: 3px!important;
+    background-color: rgb(33, 37, 41) !important;
+    border-color: #C6AD24 !important;
+    border-width: 3px !important;
 }

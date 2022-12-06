@@ -1,3 +1,9 @@
 .info-list {
     font-size: 1.2em!important;
 }
+@media only screen and (max-width: 768px) {
+.contact-container{
+    flex-direction: column-reverse;
+    align-items: center;
+
+}}

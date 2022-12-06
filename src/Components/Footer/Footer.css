@@ -28,7 +28,7 @@
 }
 
 .footer-desc-text {
-  font-family: var(--commontext-font);
+  font-family: 'Times New Roman', Times, serif;
   font-size: auto;
   color: white;
   font-weight: var(--commontext-font-weight);

@@ -36,7 +36,7 @@
 }
 
 .commontext {
-  font-family: var(--commontext-font);
+  font-family: 'Times New Roman', Times, serif;
   font-size: 1.7em;
   color: var(--commontext-color);
   font-weight: var(--commontext-font-weight);

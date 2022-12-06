@@ -1,6 +1,6 @@
 .carousel {
     top: 80px;
-    height: 90vh;
+    max-height: 90vh;
     width: 100%;
     position: static !important;
 }
@@ -8,7 +8,8 @@
 .carousel-container {
     top: -37px;
     position: relative;
-
+    height: auto;
+    max-height: 90vh;
 }
 
 
