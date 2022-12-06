@@ -55,7 +55,7 @@
         
     }
 }
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 1200px) {
     .grid-column-small,.grid-column-big{
         width: 90%;
     }

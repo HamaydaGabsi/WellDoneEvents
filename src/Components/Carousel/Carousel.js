@@ -7,7 +7,7 @@ const create_carousel_item = (carousel) =>{
   return(
     <Carousel.Item  >
         <img
-         className="d-block w-100 h-100"
+         className="d-block w-100 h-100 carousel-img"
           src={carousel.image}
           alt="First slide"
               />

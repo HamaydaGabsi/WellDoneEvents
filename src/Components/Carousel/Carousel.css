@@ -22,3 +22,6 @@
 .carousel-item {
     height: inherit !important;
 }
+.carousel-img{
+    max-height: 90vh;
+}

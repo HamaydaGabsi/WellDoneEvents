@@ -9,6 +9,9 @@
 
 }
 
+.post-container-reverse .post-image-container {
+    align-items: flex-end;
+}
 .post-container-reverse {
     flex-direction: row-reverse;
 }
@@ -74,7 +77,8 @@
 @media only screen and (max-width: 1024px) {
     .post-container {
         /* margin-top: 64px; */
-        flex-wrap: wrap;
+        /* flex-wrap: wrap; */
+        flex-direction: column;
         margin-bottom: 16px;
         /* max-height: 800px; */
     }
@@ -82,7 +86,7 @@
     .post-image-container {
         width: 100%;
         margin: 48px 0;
-        isplay: flex;
+        display: flex;
         justify-content: center;
 
     }
