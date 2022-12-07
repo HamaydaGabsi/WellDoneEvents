@@ -40,58 +40,58 @@ function App() {
   };
 
   
-  const [activelinks , setactivelinks] = useState(Hometrue) 
+  // const [activelinks , setactivelinks] = useState(Hometrue) 
   
 
-  const setlinks=(link) =>{
-    if(link === 'home')
-    {
-    setactivelinks(Hometrue)
-    sessionStorage.setItem('activelink','home')
-    }
-    else if(link === 'services')
-    {
-      setactivelinks(Servicetrue)
-      sessionStorage.setItem('activelink','services')
-    }
-    else if(link === 'gallerie')
-    {
-      setactivelinks(Gallerietrue)
-      sessionStorage.setItem('activelink','gallerie')
-    }
-    else if(link === 'contact')
-    {
-      setactivelinks(Contacttrue)
-      sessionStorage.setItem('activelink','contact')
-    }
-    console.log(sessionStorage.getItem('activelink'))
-  }
+  // const setlinks=(link) =>{
+  //   if(link === 'home')
+  //   {
+  //   setactivelinks(Hometrue)
+  //   sessionStorage.setItem('activelink','home')
+  //   }
+  //   else if(link === 'services')
+  //   {
+  //     setactivelinks(Servicetrue)
+  //     sessionStorage.setItem('activelink','services')
+  //   }
+  //   else if(link === 'gallerie')
+  //   {
+  //     setactivelinks(Gallerietrue)
+  //     sessionStorage.setItem('activelink','gallerie')
+  //   }
+  //   else if(link === 'contact')
+  //   {
+  //     setactivelinks(Contacttrue)
+  //     sessionStorage.setItem('activelink','contact')
+  //   }
+  //   console.log(sessionStorage.getItem('activelink'))
+  // }
 
   
 
   const navigatetohome = () =>{
   navigate('/');
-  setlinks('home')
+  // setlinks('home')
   }
   const navigatetoservices =() =>{
   navigate('/services')
-  setlinks('services')
+  // setlinks('services')
   }
   const navigatetogallerie =() =>{
   navigate('/gallerie')
-  setlinks('gallerie')
+  // setlinks('gallerie')
   }
   const navigatetocontact =() =>{
   navigate('/contact')
-  setlinks('contact')
+  // setlinks('contact')
   }
   const navigation = {
   navigatetohome , navigatetocontact , navigatetogallerie , navigatetoservices
   }
 
-  useEffect(() => {
-    sessionStorage.setItem("activelinks", JSON.stringify(Hometrue));
-  }, []);
+  // useEffect(() => {
+  //   sessionStorage.setItem("activelinks", JSON.stringify(Hometrue));
+  // }, []);
   const [navbarHeight, setNavbarHeight] = useState('0');
   useEffect(() => {
     setNavbarHeight(
@@ -104,13 +104,13 @@ function App() {
       document.getElementById("nav-bottom").getBoundingClientRect().top
     );
   };
-  
+
   
   return (
     <>
       <Navbar
         navigation={navigation}
-        activelinks={activelinks}
+        // activelinks={activelinks}
         navbarHeight={navbarHeight}
         setNavbarHeight={setNavbarHeight}
         setID = {setId_lieu}

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
@@ -7,7 +7,9 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import 'animate.css'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-sessionStorage.setItem('activelink','')
+if(sessionStorage.getItem('activelink') === null)
+sessionStorage.setItem('activelink','accueil')
+
 root.render(
   
     <Router>

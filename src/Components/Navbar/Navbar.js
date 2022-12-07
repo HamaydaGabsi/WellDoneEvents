@@ -3,17 +3,20 @@ import "./Navbar.css";
 import logo from "./logo.png";
 const Navbar = ({
   navigation,
-  activelinks,
+  // activelinks,
   setNavbarHeight,
   navbarHeight,
   setID,
 }) => {
+  const [activelink , setactivelink] = useState(sessionStorage.getItem('activelink'))
   const [lieux, setlieux] = useState([]);
   const fetch_lieux = () => {
     fetch("http://localhost:5000/api/lieux/get/all/active")
       .then((response) => response.json())
       .then((data) => setlieux(data.data))
       .catch((err) => console.error(err));
+    if(lieux[0])
+    setID(lieux[0]._id);
   };
   //navbar animation
   var prevScrollpos = window.pageYOffset;
@@ -73,7 +76,27 @@ const Navbar = ({
     }
   };
   useEffect(fetch_lieux, []);
+  const navbar_elements = 
+  [
+    'accueil','services','gallerie','contact'
+  ]
+  
+   const setinitialstate = ()=> {
+    document.getElementById(sessionStorage.getItem('activelink')).classList.add('actif')
 
+   }
+    const linkhandler = (element) => {
+      
+      navbar_elements.forEach((el) => {
+        if(element.id === el) {
+          sessionStorage.setItem('activelink',element.id)
+          element.classList.add('actif')
+      }
+        else document.getElementById(el).classList.remove('actif')
+      })
+    }
+
+    useEffect(setinitialstate,[])
   return (
     <nav
       className="fixed-top bg-dark d-flex"
@@ -89,20 +112,26 @@ const Navbar = ({
       <div className="d-flex w-100  nav-container">
         <div className="nav-row-1">
           <span
-            className={`nav-title nav-title-${activelinks.home}`}
+            className={`nav-title `}
             onClick={(e) => {
               hideSecondaryNavbar();
               navigation.navigatetohome();
+              setactivelink('accueil')
+              linkhandler(e.target)
             }}
+            id="accueil"
           >
-            Acceuil
+            Accueil
           </span>
           <span
-            className={`nav-title nav-title-${activelinks.services}`}
+            className={`nav-title`}
             onClick={(e) => {
               hideSecondaryNavbar();
               navigation.navigatetoservices();
+              setactivelink('services')
+              linkhandler(e.target)
             }}
+            id="services"
           >
             Services
           </span>
@@ -110,7 +139,12 @@ const Navbar = ({
         {/* add bg-dark,image-container and remove h-100  */}
         <div
           className="bg-dark image-container"
-          onClick={navigation.navigatetohome}
+          onClick={(e)=>{
+            navigation.navigatetohome()
+            hideSecondaryNavbar()
+            setactivelink('accueil')
+            linkhandler()
+          }}
         >
           <img
             id="logo"
@@ -121,21 +155,26 @@ const Navbar = ({
         </div>
         <div className="nav-row-3">
           <span
-            className={`nav-title nav-title-${activelinks.gallerie}`}
+            className={`nav-title`}
             onClick={(e) => {
               navigation.navigatetogallerie();
               fetch_lieux();
+              setactivelink('gallerie')
+              linkhandler(e.target)
             }}
             id="gallerie"
           >
             Gallerie
           </span>
           <span
-            className={`nav-title nav-title-${activelinks.contact}`}
+            className={`nav-title `}
             onClick={(e) => {
               hideSecondaryNavbar();
               navigation.navigatetocontact();
+              setactivelink('contact')
+              linkhandler(e.target)
             }}
+            id="contact"
           >
             Contact
           </span>

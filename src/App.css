@@ -21,7 +21,7 @@
   transition: 0.5s ease-in-out;
 }
 
-.nav-title-true , .nav-title:active{
+.actif , .nav-title:active{
   border-color: var(--nav-title-active-border-color);
   
 }
