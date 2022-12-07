@@ -122,7 +122,7 @@ const ContactForm = () => {
             </select>
         </div>
           <input className="form-control ms-3 d-inline-block "
-            type="text"
+            type="date"
             id="date"
             placeholder='Date'
             required />

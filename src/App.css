@@ -28,16 +28,18 @@
 
 .title {
   font-family: var(--title-font);
-  font-size: 4em;
+  font-size: 3em;
   color: var(--title-color);
   font-weight: var(--title-font-weight);
   line-height: var(--title-line-height);
   text-align: var(--title-text-align);
+  margin-bottom: 0.8em;
+
 }
 
 .commontext {
-  font-family: var(--commontext-font);
-  font-size: 1.7em;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 1.3em;
   color: var(--commontext-color);
   font-weight: var(--commontext-font-weight);
   line-height: var(--commontext-line-height);
@@ -47,11 +49,11 @@
 
 @media only screen and (max-width: 1200px) {
   .title {
-    font-size: 3em;
+    font-size: 2em;
   }
 
   .commontext {
-    font-size: 1.5em;
+    font-size: 1.2em;
   }
 }
 

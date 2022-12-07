@@ -3,14 +3,13 @@
     height: 100%;
     flex-wrap: nowrap;
     padding: 3rem;
-    max-height: 600px;
+    /* max-height: 600px; */
     margin-bottom: 48px;
+    align-items: center;
 
 }
 
-.post-container-reverse {
-    flex-direction: row-reverse;
-}
+
 
 .post-caption {
     flex-direction: column;
@@ -24,9 +23,17 @@
 .post-image-container {
     width: 40%;
     margin: 0 24px;
-
+    display: flex;
+    justify-content: flex-end;
 
 }
+.post-container-reverse .post-image-container {
+    justify-content: flex-start;
+}
+.post-container-reverse {
+    flex-direction: row-reverse;
+}
+
 .caption-p {
     text-align: justify;
     font-style: normal;
@@ -70,17 +77,20 @@
 
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1024px) {
     .post-container {
         /* margin-top: 64px; */
-        flex-wrap: wrap;
+        /* flex-wrap: wrap; */
+        flex-direction: column;
         margin-bottom: 16px;
-        max-height: 800px;
+        /* max-height: 800px; */
     }
 
     .post-image-container {
         width: 100%;
         margin: 48px 0;
+        display: flex;
+        justify-content: center;
 
     }
 
