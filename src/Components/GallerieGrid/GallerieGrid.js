@@ -1,5 +1,4 @@
-import React , {useEffect, useState} from 'react'
-import test_image from '../Navbar/logo.png'
+import React , {useState} from 'react'
 import './GallerieGrid.css'
 
 
@@ -8,7 +7,7 @@ import './GallerieGrid.css'
 const GallerieGrid = ({posts}) => {
 
 
-    const [items_per_column , set_items_per_column] = useState(1)
+    const [items_per_column , set_items_per_column] = useState(2)
 
 
     let column_items_array = []
@@ -60,19 +59,6 @@ const GallerieGrid = ({posts}) => {
         return column_items_array.map((items , index) =>create_gallerie_column(items,index%2))
         }
 
-    // const create_gallerie_item = (image) => {
-    //     return (
-    //         <div className={`grid-item `}>
-    //             <img  src={image} alt="" />
-    //         </div>   
-    //     )
-    // }
-    // const generate_gallerie = (items) => {
-    //     if(items!==undefined)
-    //     {console.log('gallerie generated')
-    //     console.log(items)
-    //     return items.map(create_gallerie_item)}
-    // }
     return (
         <div className='d-flex grid-container'>
             {generate_gallerie(posts)}    
