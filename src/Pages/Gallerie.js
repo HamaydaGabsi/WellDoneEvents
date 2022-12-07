@@ -12,7 +12,7 @@ const Gallerie =({id}) =>{
         .then(response => response.json())
         .then(data => {
             if(data)
-            {console.log(data)
+            {
             setgallerieposts(data.data.images)}})
         .catch(err => console.error(err))
     }

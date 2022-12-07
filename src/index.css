@@ -22,7 +22,7 @@ html,body {
 }
 :root{
     --nav-title-font : Cinzel Decorative;
-    --nav-title-font-size : 20px;
+    --nav-title-font-size : 15px;
     --nav-title-color : white;
     --nav-title-hover-color : white;
     --nav-title-active-color : white;
@@ -40,14 +40,14 @@ html,body {
     --nav-title-active-border-color :  #C6AD24;
 
     --commontext-font : Cherry Swash;
-    --commontext-font-size : 30px;
+    --commontext-font-size : 40px;
     --commontext-font-weight : 400;
     --commontext-letter-spacing : 0em;
-    --commontext-line-height : 40px;
+    --commontext-line-height : 28px;
     --commontext-font-text-align : justify;
 
     --title-font : var(--nav-title-font);
-    --title-font-size : 80px;
+    --title-font-size : 60px;
     --title-font-weight :700;
     --title-font-style : normal;
     --title-font-line-height :108px;

@@ -1,16 +1,20 @@
-import React, { useEffect , useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Navbar.css";
 import logo from "./logo.png";
-
-const Navbar = ({navigation, activelinks, setNavbarHeight, navbarHeight , setID}) => {
-
-  const [lieux , setlieux] = useState([])
-  const fetch_lieux = () =>{
-    fetch('http://localhost:5000/api/lieux/get/all/active')
-    .then(response => response.json())
-    .then(data => setlieux(data.data) )
-    .catch(err => console.error(err))
-  }
+const Navbar = ({
+  navigation,
+  activelinks,
+  setNavbarHeight,
+  navbarHeight,
+  setID,
+}) => {
+  const [lieux, setlieux] = useState([]);
+  const fetch_lieux = () => {
+    fetch("http://localhost:5000/api/lieux/get/all/active")
+      .then((response) => response.json())
+      .then((data) => setlieux(data.data))
+      .catch((err) => console.error(err));
+  };
   //navbar animation
   var prevScrollpos = window.pageYOffset;
   window.onresize = function () {
@@ -24,7 +28,7 @@ const Navbar = ({navigation, activelinks, setNavbarHeight, navbarHeight , setID}
     var currentScrollPos = window.pageYOffset;
     var navElement = document.querySelector(".phone-navbar");
     if (navElement) {
-      if (prevScrollpos > currentScrollPos) {
+      if (prevScrollpos >= currentScrollPos) {
         document
           .querySelector(".phone-navbar")
           .classList.remove("phone-navbar-min");
@@ -47,8 +51,29 @@ const Navbar = ({navigation, activelinks, setNavbarHeight, navbarHeight , setID}
   const hideSecondaryNavbar = () => {
     document.getElementById("nav").classList.remove("doubleNav");
     document.getElementById("body").classList.remove("doubleNav-active");
-  }
-  useEffect(fetch_lieux , [])
+  };
+  const [navPage, setNavPage] = useState(1);
+  const [activeNavPage, setActiveNavPage] = useState(1);
+  const [linksPerPage, setLinksPerPage] = useState(5);
+  const rightArrowClick = () => {
+    const nav2=document.getElementById('nav2')
+    const fullllWidth=nav2.scrollWidth
+    const windowWidth=window.innerWidth;
+    if(fullllWidth>windowWidth+(navPage-1)*200){
+      
+      nav2.style.translate='-'+navPage*200+'px 0';
+      setNavPage(navPage+1)
+    }
+  };
+  const leftArrowClick = () => {
+    const nav2=document.getElementById('nav2')
+    if(navPage>1){
+      nav2.style.translate='-'+(navPage-2)*200+'px 0';
+      setNavPage(navPage-1)
+    }
+  };
+  useEffect(fetch_lieux, []);
+
   return (
     <nav
       className="fixed-top bg-dark d-flex"
@@ -58,7 +83,7 @@ const Navbar = ({navigation, activelinks, setNavbarHeight, navbarHeight , setID}
         if (e.target === gallerie) {
           document.getElementById("nav").classList.add("doubleNav");
           document.getElementById("body").classList.add("doubleNav-active");
-        } 
+        }
       }}
     >
       <div className="d-flex w-100  nav-container">
@@ -67,9 +92,8 @@ const Navbar = ({navigation, activelinks, setNavbarHeight, navbarHeight , setID}
             className={`nav-title nav-title-${activelinks.home}`}
             onClick={(e) => {
               hideSecondaryNavbar();
-              navigation.navigatetohome()
-            }
-            }
+              navigation.navigatetohome();
+            }}
           >
             Acceuil
           </span>
@@ -77,15 +101,16 @@ const Navbar = ({navigation, activelinks, setNavbarHeight, navbarHeight , setID}
             className={`nav-title nav-title-${activelinks.services}`}
             onClick={(e) => {
               hideSecondaryNavbar();
-              navigation.navigatetoservices()}
-            }
+              navigation.navigatetoservices();
+            }}
           >
             Services
           </span>
         </div>
         {/* add bg-dark,image-container and remove h-100  */}
-        <div className="bg-dark image-container"
-        onClick={navigation.navigatetohome}
+        <div
+          className="bg-dark image-container"
+          onClick={navigation.navigatetohome}
         >
           <img
             id="logo"
@@ -98,8 +123,8 @@ const Navbar = ({navigation, activelinks, setNavbarHeight, navbarHeight , setID}
           <span
             className={`nav-title nav-title-${activelinks.gallerie}`}
             onClick={(e) => {
-              navigation.navigatetogallerie()
-              fetch_lieux()
+              navigation.navigatetogallerie();
+              fetch_lieux();
             }}
             id="gallerie"
           >
@@ -109,24 +134,42 @@ const Navbar = ({navigation, activelinks, setNavbarHeight, navbarHeight , setID}
             className={`nav-title nav-title-${activelinks.contact}`}
             onClick={(e) => {
               hideSecondaryNavbar();
-              navigation.navigatetocontact()}
-            }
+              navigation.navigatetocontact();
+            }}
           >
             Contact
           </span>
         </div>
       </div>
-
-      <div className="secondary-navbar ">
-        {lieux.map((e, index) => {
-          return <span
-           onClick={(f)=>{setID(e._id)}} 
-           className={`${e._id} nav-title   secondary-nav-title `}>{e.title}</span>;
-        })}
+      <div className="secondary-navbar-bg"> 
+      <div className="left-arrow arrow" onClick={leftArrowClick}>
+            {" "}
+            <span>&lt;</span>
+          </div>
+          <div className="right-arrow arrow" onClick={rightArrowClick}>
+          <span>&gt;</span>
+          </div>
+        <div className="secondary-navbar " id="nav2">
+         
+          {lieux.map((e, index) => {
+            return (
+              <div className="secondary-navbar-title-container" >
+                <span
+                  onClick={(f) => {
+                    setID(e._id);
+                  }}
+                  className={`${e._id} nav-title   secondary-nav-title `}
+                >
+                  {e.title}
+                </span>
+              </div>
+            );
+          })}
+        </div>
       </div>
-      <div id="nav-bottom" style={{width: '100%'}}></div>
+      <div id="nav-bottom" style={{ width: "100%" }}></div>
     </nav>
   );
 };
 
-export { Navbar}
+export { Navbar };

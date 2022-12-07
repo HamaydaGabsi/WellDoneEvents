@@ -8,7 +8,7 @@ const check_parity = (a) => {
 };
 
 const HomePost = ({ order, post }) => {
-  console.log(post.description);
+ 
   return (
     <div
       className={`post-container post-container-${check_parity(

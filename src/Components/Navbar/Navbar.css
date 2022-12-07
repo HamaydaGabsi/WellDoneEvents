@@ -5,6 +5,7 @@ nav {
     flex-wrap: wrap;
     box-shadow: 0px 2px 5px black;
     transition: all 0.3s;
+    min-height: 55px;
 }
 
 .nav-container {
@@ -22,38 +23,36 @@ nav {
     justify-content: center;
     border-radius: 50%;
     transition: 0.3s ease-in-out;
+    min-height: 60px;
 }
 
-.image-container:hover{
+.image-container:hover {
     cursor: pointer;
 }
 
 #logo {
-    height: 100%;
-    top: 10px;
+    height: 105%;
     transition: 0.3s ease-in-out;
-    ;
 }
 
 
 .nav-row-1,
 .nav-row-3 {
     position: relative;
-    top: -15px;
+    top: -1.5vh;
 }
 
 .secondary-navbar {
     height: fit-content;
-    background-color:rgb(33, 37, 41);
+    background-color: rgb(33, 37, 41);
     width: 100%;
     z-index: 1000;
     position: relative;
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
-    display: none;
-    transition: all 0.3s;
     
+    transition: all 0.3s;
+
 }
 
 
@@ -61,30 +60,63 @@ nav {
     z-index: 30;
 
     font-weight: bold;
-    --nav-title-font-size : 15px!important;
+    --nav-title-font-size: 15px !important;
     border: none;
 }
-/* .secondary-nav-title:hover {
-    border: none;
- } */
-.doubleNav .secondary-navbar , .doubleNav .secondary-navbar-background{
+.secondary-navbar-bg{
+    background-color:rgb(33, 37, 41) ;
+    width: 100%;
+    position: relative;
+    justify-content: flex-start;
+    padding: 0 50px;
+    display: none;
+}
+
+
+.doubleNav .secondary-navbar,
+.doubleNav .secondary-navbar-bg {
     display: flex;
+    justify-content: flex-start;
+}
+.secondary-navbar-title-container{
+    min-width: fit-content;
+    /* max-width: 20%; */
+    /* width: fit-content; */
+    display: flex;
+    justify-content: center;
+    
+}
+.arrow{
+    font-size: large;
+    color: white;
+    z-index: 10000;
+    position: absolute;
+    height: 100%;
+    width: 1.2em;
+    cursor: pointer;
+    font-size: 2em;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color:rgb(33, 37, 41) ;
+    text-align: center;
+    
+
 }
 
+.left-arrow{
+    left: 0px;
+}
+.right-arrow{
+    right: 0%;
 
+}
 @media only screen and (min-width: 768px) {
-    /* .doubleNav {
-        height: 12vh;
-    }
-    .doubleNav .nav-row-1,
-.doubleNav .nav-row-3 {
-    top: 0;
-} */
-.secondary-navbar{
-    margin-top: 8px;
 
+    .secondary-navbar {
+        margin-top: 8px;
+
+    }
 }
-}
+
 @media only screen and (max-width: 768px) {
     nav {
         height: 22vh;
@@ -135,8 +167,8 @@ nav {
     }
 
     .phone-navbar-min .image-container {
-        height: 120px;
-        width: 105px;
+        height: 11vh;
+        width: 10vh;
         border-radius: 50%;
     }
 
@@ -144,11 +176,13 @@ nav {
         height: 100%;
         top: 10px;
     }
-    .secondary-navbar{
-        margin-top: 27px;
+    .arrow{
+        top: -7px;
     }
+    
 
 }
+
 
 @media only screen and (max-width: 375px) {
     #logo {
@@ -159,8 +193,8 @@ nav {
 
 @media only screen and (min-width: 768px) {
     .image-container {
-        height: 120px;
-        width: 105px;
+        height: 11vh;
+        width: 10vh;
         border-radius: 50%;
     }
 }
