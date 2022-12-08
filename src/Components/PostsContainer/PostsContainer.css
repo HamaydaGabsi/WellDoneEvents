@@ -6,6 +6,10 @@
     flex-wrap: nowrap;
     align-items: center;
 }
+.posts-loader{
+    justify-content: center;
+    margin-bottom:30px;
+}
 @media only screen and (max-width: 375px){
    .cardscontainer{
     margin: 0 8px;

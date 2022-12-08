@@ -1,6 +1,7 @@
 import React, { useEffect, useState }  from 'react';
 import './Services.css'
 import Cardsrow from '../../Components/Cardsrow/Cardsrow.js';
+import Loader from '../../Components/Loader/Loader';
 
 const Services = () => {
   //Responsiveness
@@ -39,6 +40,7 @@ const Services = () => {
   };
 
     const [cards , setcards] = useState([])
+    const [cards_loading , setcards_loading] = useState(true)
 
     const fetch_cards=() => {
         fetch('http://localhost:5000/api/services/active/post')
@@ -46,6 +48,7 @@ const Services = () => {
         .then(data => {
             console.log(data)
             setcards(data.data)
+            // setcards_loading(false)
         })
     }
 
@@ -70,7 +73,7 @@ const Services = () => {
   };
   return (
     <div className="CardsContainer d-flex ">
-      {generate_card_container(cards)}
+      {cards_loading ? <div className='card-loader d-flex'> <Loader/></div> : generate_card_container(cards)}
     </div>
   );
 };

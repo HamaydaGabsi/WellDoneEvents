@@ -11,13 +11,20 @@
     height: auto;
     max-height: 90vh;
 }
-
+.carousel-loader  {
+justify-content: center;
+margin-top: 100px;
+}
+.carousel-loader #loader {
+    z-index: 100;
+}
 
 
 .carousel-inner {
     height: inherit !important;
     width: inherit !important;
 }
+
 
 .carousel-item {
     height: inherit !important;

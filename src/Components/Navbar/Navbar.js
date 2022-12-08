@@ -97,6 +97,23 @@ const Navbar = ({
     }
 
     useEffect(setinitialstate,[])
+    const maplieux = () => {
+      if(lieux !== []){
+      lieux.map((e, index) => {
+        return (
+          <div className="secondary-navbar-title-container" >
+            <span
+              onClick={(f) => {
+                setID(e._id);
+              }}
+              className={`${e._id} nav-title   secondary-nav-title `}
+            >
+              {e.title}
+            </span>
+          </div>
+        );
+      })}
+    }
   return (
     <nav
       className="fixed-top bg-dark d-flex"
@@ -190,20 +207,8 @@ const Navbar = ({
           </div>
         <div className="secondary-navbar " id="nav2">
          
-          {lieux.map((e, index) => {
-            return (
-              <div className="secondary-navbar-title-container" >
-                <span
-                  onClick={(f) => {
-                    setID(e._id);
-                  }}
-                  className={`${e._id} nav-title   secondary-nav-title `}
-                >
-                  {e.title}
-                </span>
-              </div>
-            );
-          })}
+          
+        {  maplieux()}
         </div>
       </div>
       <div id="nav-bottom" style={{ width: "100%" }}></div>

@@ -45,6 +45,14 @@
   line-height: var(--commontext-line-height);
   text-align: var(--commontext-text-align);
 }
+.gallerie-loader {
+  justify-content: center;
+  
+}
+.gallerie-loader #loader {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
 
 
 @media only screen and (max-width: 1200px) {

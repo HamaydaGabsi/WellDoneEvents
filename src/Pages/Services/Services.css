@@ -4,6 +4,9 @@
     margin: 100px 100px;
     justify-content: space-around;
 }
+.card-loader {
+    justify-content: center;
+}
 @media only screen and (max-width: 1200px){
     .CardsContainer{
         margin: 24px;
