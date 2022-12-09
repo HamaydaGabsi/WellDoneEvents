@@ -1,6 +1,8 @@
 import React , {useEffect , useState} from 'react';
 import GallerieGrid from '../Components/GallerieGrid/GallerieGrid';
 import Loader from '../Components/Loader/Loader';
+import { Helmet } from 'react-helmet-async';
+
 
 
 const Gallerie =({id}) =>{
@@ -15,6 +17,7 @@ const Gallerie =({id}) =>{
             if(data)
             {
             setgallerieposts(data.data.images)
+            console.log(data.data.images)
             setgallerie_loading(false)
         }})
         .catch(err => console.error(err))
@@ -23,11 +26,15 @@ const Gallerie =({id}) =>{
     useEffect(fetch_gallerieposts , [id])
 
     return(
-
-        <div className='gallerie mt-5 ms-5 me-5'>
+        <>
+        <Helmet>
+          <meta name='description' content='Gallerie Page' />
+        </Helmet>
+        <div className='gallerie mt-3 ms-3 me-3'>
             {gallerie_loading ?<div className='gallerie-loader d-flex'> <Loader/> </div> : <GallerieGrid posts = {gallerieposts} />}
             
         </div>
+        </>
     )
    
 }

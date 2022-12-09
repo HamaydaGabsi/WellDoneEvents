@@ -1,6 +1,7 @@
 import React , {useEffect , useState} from 'react';
 import PhotoCarousel from '../Components/Carousel/Carousel';
 import PostsContainer from '../Components/PostsContainer/PostsContainer'; 
+import { Helmet } from 'react-helmet-async';
 
 
 
@@ -42,6 +43,9 @@ useEffect(fetch_carousel, [])
 
     return (
   <>
+    <Helmet>
+          <meta name='description' content='Home Page' />
+      </Helmet>
     <PhotoCarousel carousels={carousels} loading = {carouselsIsLoading} />
     <PostsContainer posts={posts} loading={postsLoading} />
   </>

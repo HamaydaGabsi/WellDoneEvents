@@ -1,5 +1,6 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { HelmetProvider } from 'react-helmet-async';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
@@ -11,9 +12,12 @@ if(sessionStorage.getItem('activelink') === null)
 sessionStorage.setItem('activelink','accueil')
 
 root.render(
+
   
     <Router>
-    <App />
+        <HelmetProvider>
+            <App />
+        </HelmetProvider>
     </Router>
   
 );

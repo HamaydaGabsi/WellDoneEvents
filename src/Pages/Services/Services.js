@@ -2,6 +2,8 @@ import React, { useEffect, useState }  from 'react';
 import './Services.css'
 import Cardsrow from '../../Components/Cardsrow/Cardsrow.js';
 import Loader from '../../Components/Loader/Loader';
+import { Helmet } from 'react-helmet-async';
+
 
 const Services = () => {
   //Responsiveness
@@ -48,7 +50,7 @@ const Services = () => {
         .then(data => {
             console.log(data)
             setcards(data.data)
-            // setcards_loading(false)
+            setcards_loading(false)
         })
     }
 
@@ -73,6 +75,9 @@ const Services = () => {
   };
   return (
     <div className="CardsContainer d-flex ">
+      <Helmet>
+          <meta name='description' content='Services Page' />
+      </Helmet>
       {cards_loading ? <div className='card-loader d-flex'> <Loader/></div> : generate_card_container(cards)}
     </div>
   );

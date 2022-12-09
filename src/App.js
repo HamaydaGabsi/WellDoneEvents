@@ -8,90 +8,32 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Route,Routes, useNavigate } from 'react-router-dom';
 import {Navbar }from './Components/Navbar/Navbar';
 import { useState , useEffect } from 'react';
+import { Helmet } from 'react-helmet-async';
+
 
 
 
 function App() {
   const [Id_lieu , setId_lieu] = useState()
   const navigate = useNavigate();
-  const Hometrue = {
-    home:true,
-    contact:false,
-    gallerie:false,
-    services:false,
-  }
-  const Servicetrue = {
-    services:true,
-    home:false,
-    contact:false,
-    gallerie:false,
-  }
-  const Gallerietrue = {
-    gallerie:true,
-    contact:false,
-    services:false,
-    home:false,
-  }
-  const Contacttrue = {
-    contact: true,
-    services: false,
-    gallerie: false,
-    home: false,
-  };
 
-  
-  // const [activelinks , setactivelinks] = useState(Hometrue) 
-  
-
-  // const setlinks=(link) =>{
-  //   if(link === 'home')
-  //   {
-  //   setactivelinks(Hometrue)
-  //   sessionStorage.setItem('activelink','home')
-  //   }
-  //   else if(link === 'services')
-  //   {
-  //     setactivelinks(Servicetrue)
-  //     sessionStorage.setItem('activelink','services')
-  //   }
-  //   else if(link === 'gallerie')
-  //   {
-  //     setactivelinks(Gallerietrue)
-  //     sessionStorage.setItem('activelink','gallerie')
-  //   }
-  //   else if(link === 'contact')
-  //   {
-  //     setactivelinks(Contacttrue)
-  //     sessionStorage.setItem('activelink','contact')
-  //   }
-  //   console.log(sessionStorage.getItem('activelink'))
-  // }
-
-  
 
   const navigatetohome = () =>{
-  navigate('/');
-  // setlinks('home')
+    navigate('/');
   }
   const navigatetoservices =() =>{
-  navigate('/services')
-  // setlinks('services')
+    navigate('/services')
   }
   const navigatetogallerie =() =>{
-  navigate('/gallerie')
-  // setlinks('gallerie')
+    navigate('/gallerie')
   }
   const navigatetocontact =() =>{
-  navigate('/contact')
-  // setlinks('contact')
+    navigate('/contact')
   }
   const navigation = {
   navigatetohome , navigatetocontact , navigatetogallerie , navigatetoservices
   }
 
-  // useEffect(() => {
-  //   sessionStorage.setItem("activelinks", JSON.stringify(Hometrue));
-  // }, []);
   const [navbarHeight, setNavbarHeight] = useState('0');
   useEffect(() => {
     setNavbarHeight(
@@ -108,9 +50,12 @@ function App() {
   
   return (
     <>
+      <Helmet>
+        <title>Well Done Events</title>
+        <meta name='description' content='Well Done Events' />
+      </Helmet>
       <Navbar
         navigation={navigation}
-        // activelinks={activelinks}
         navbarHeight={navbarHeight}
         setNavbarHeight={setNavbarHeight}
         setID = {setId_lieu}
