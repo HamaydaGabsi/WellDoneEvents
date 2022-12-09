@@ -1,6 +1,15 @@
 .info-list {
     font-size: 1.2em!important;
 }
+#welldone-facebook{
+   text-decoration: none!important;
+   color: #C6AD24 !important;
+   font-weight: bold;
+}
+.info-text{
+    color: #C6AD24 !important;
+   font-weight: bold;
+}
 @media only screen and (max-width: 768px) {
 .contact-container{
     flex-direction: column-reverse;
