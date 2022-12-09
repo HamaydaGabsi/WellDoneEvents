@@ -26,7 +26,7 @@ export default function Footer() {
         <div className="MediaIcons">
           <a href="https://www.facebook.com/profile.php?id=100087221494948" target='_blank'>
             <img alt=""
-              style={{ height: "40px", color: "#6383EA" }}
+              style={{ height: "60px", color: "#6383EA" }}
               src={facebookIcon}
             ></img>
           </a>

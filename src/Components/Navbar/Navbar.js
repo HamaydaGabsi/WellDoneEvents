@@ -97,6 +97,19 @@ const Navbar = ({
     }
 
     useEffect(setinitialstate,[])
+    useEffect(()=>{
+      const nav2=document.getElementById('nav2')
+      const fullllWidth=nav2.scrollWidth
+    const windowWidth=window.innerWidth;
+    if(windowWidth>=fullllWidth){
+      document.getElementById('leftArrow').classList.add('hidden');
+      document.getElementById('rightArrow').classList.add('hidden');
+    }
+    else{
+      document.getElementById('leftArrow').classList.remove('hidden');
+      document.getElementById('rightArrow').classList.remove('hidden');
+    }
+    })
   return (
     <nav
       className="fixed-top bg-dark d-flex"
@@ -181,15 +194,15 @@ const Navbar = ({
         </div>
       </div>
       <div className="secondary-navbar-bg"> 
-      <div className="left-arrow arrow" onClick={leftArrowClick}>
+      <div className="left-arrow arrow" onClick={leftArrowClick} id='leftArrow'>
             {" "}
             <span>&lt;</span>
           </div>
-          <div className="right-arrow arrow" onClick={rightArrowClick}>
+          <div className="right-arrow arrow" onClick={rightArrowClick} id='rightArrow'>
           <span>&gt;</span>
           </div>
         <div className="secondary-navbar " id="nav2">
-         
+      
           
         {  lieux.map((e, index) => {
         return (
