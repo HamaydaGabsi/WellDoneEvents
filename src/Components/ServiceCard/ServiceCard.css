@@ -1,6 +1,6 @@
 .card-container {
-    height: 400px;
-    width: 300px;
+    height: 600px;
+    width: 450px;
     border: 8px solid #C6AD24;
     padding: 0;
 }
@@ -11,6 +11,7 @@
     background: rgba(0, 0, 0, 0.5);
     justify-content: center;
     visibility: hidden;
+    text-align: center;
 
 }
 

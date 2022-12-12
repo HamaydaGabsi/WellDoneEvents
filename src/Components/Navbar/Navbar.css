@@ -7,6 +7,9 @@ nav {
     transition: all 0.3s;
     min-height: 55px;
 }
+.hidden{
+    visibility: hidden;
+}
 
 .nav-container {
     justify-content: center;
@@ -77,7 +80,7 @@ nav {
 .doubleNav .secondary-navbar,
 .doubleNav .secondary-navbar-bg {
     display: flex;
-    justify-content: flex-start;
+    justify-content: center ;
 }
 .secondary-navbar-title-container{
     min-width: fit-content;

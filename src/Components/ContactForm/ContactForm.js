@@ -115,10 +115,20 @@ const ContactForm = () => {
             name="Type d'évènement" 
             id="type" 
             required>
-                <option value="volvo">Volvo</option>
-                <option value="saab">Saab</option>
-                <option value="opel">Opel</option>
-                <option value="Other">Other</option>
+              <option value="" disabled selected>Type d'évènement</option>
+                <option value="Mariage">Mariage</option>
+                <option value="Fiançaille">Fiançaille</option>
+                <option value="Journée d'entreprise">Journée d'entreprise</option>
+                <option value="Congrès">Congrès</option>
+                <option value="Demande de mariage">Demande de mariage</option>
+                <option value="Circoncision">Circoncision</option>
+                <option value="Anniversaire enfant">Anniversaire enfant</option>
+                <option value="Anniversaire">Anniversaire</option>
+                <option value="Gender reveal">Gender reveal</option>
+                <option value="Pause café">Pause café</option>
+                <option value="Excursion">Excursion</option>
+                <option value="Ouverture">Ouverture</option>
+                <option value="Other">Autres</option>
             </select>
         </div>
           <input className="form-control ms-3 d-inline-block "
@@ -131,7 +141,7 @@ const ContactForm = () => {
         <input className="form-control no-height invisible  d-inline-block "
           type="text"
           id="other_text"
-          placeholder='Other'
+          placeholder='Autres'
           />
         </div>
         <div className="mb-3">

@@ -11,9 +11,7 @@ export default function Footer() {
       <div className="FooterDesc">
         <h2 className="title footer-desc-title ">Well Done events</h2>
         <p className="footer-desc-text">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
+        Well Done Events est une société d’organisation des événements .Elle propose ses services sur tout le territoire tunisien.
         </p>
       </div>
       <div className="DividerContainer">
@@ -26,7 +24,7 @@ export default function Footer() {
         <div className="MediaIcons">
           <a href="https://www.facebook.com/profile.php?id=100087221494948" target='_blank'>
             <img alt=""
-              style={{ height: "40px", color: "#6383EA" }}
+              style={{ height: "60px", color: "#6383EA" }}
               src={facebookIcon}
             ></img>
           </a>

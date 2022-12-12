@@ -7,14 +7,14 @@ import { Helmet } from 'react-helmet-async';
 
 const Services = () => {
   //Responsiveness
-  const [nbCards, setNbCards] = useState(3);
+  const [nbCards, setNbCards] = useState(2);
   const ajustCardsNumber = function() {
     if (window.innerWidth <= 1024 && window.innerWidth > 768) {
      setNbCards(2)
     } else if(window.innerWidth <= 768){
         setNbCards(1);
     }
-    else setNbCards(3);
+    else setNbCards(2);
   };
   useEffect(ajustCardsNumber)
   window.onresize = ajustCardsNumber;
