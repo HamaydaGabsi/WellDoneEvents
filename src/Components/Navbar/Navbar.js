@@ -18,6 +18,17 @@ const Navbar = ({
     if(lieux[0])
     setID(lieux[0]._id);
   };
+  const initialstate = () => {
+    if(window.location.pathname === '/gallerie')
+    {
+      document.getElementById("nav").classList.add("doubleNav");
+      document.getElementById("body").classList.add("doubleNav-active");
+    }
+    if(lieux[0])
+    setID(lieux[0]._id);
+
+  }
+  useEffect(initialstate)
   //navbar animation
   var prevScrollpos = window.pageYOffset;
   window.onresize = function () {
@@ -110,6 +121,7 @@ const Navbar = ({
       document.getElementById('rightArrow').classList.remove('hidden');
     }
     })
+    
   return (
     <nav
       className="fixed-top bg-dark d-flex"
@@ -206,7 +218,7 @@ const Navbar = ({
           
         {  lieux.map((e, index) => {
         return (
-          <div className="secondary-navbar-title-container" >
+          <div key={index} className="secondary-navbar-title-container" >
             <span
               onClick={(f) => {
                 setID(e._id);

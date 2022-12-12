@@ -10,7 +10,6 @@ const Contact = () =>{
         fetch('http://localhost:5000/api/social/get/social')
         .then(response => response.json())
         .then(data => {
-            console.log(data.data[0])
             setsocials(data.data[0])
         } )
         .catch(err => console.log(err))

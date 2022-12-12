@@ -4,12 +4,12 @@ import './Cardsrow.css'
 
 const Cardsrow = ({cards}) => {
 
-    const create_card = (card) => {
-      return  (<ServiceCard card={card} />)
+    const create_card = (card , index) => {
+      return  (<ServiceCard key={index} card={card} />)
     }
     
     const generate_cards_row = (cards) => {
-        return (cards.map(create_card))
+        return (cards.map((e,index) => create_card(e,index)))
     }
 
     return (

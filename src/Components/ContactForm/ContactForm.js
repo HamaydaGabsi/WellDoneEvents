@@ -111,7 +111,7 @@ const ContactForm = () => {
         </div>
         <div className="d-flex mb-3 w-100 input-container">
           <div className='d-flex w-100 select-container'>
-            <select onChange={setotherstatus} className='me-3 form-control d-inline-block' 
+            <select  onChange={setotherstatus} className='me-3 form-control d-inline-block' 
             name="Type d'évènement" 
             id="type" 
             required>

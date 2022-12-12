@@ -17,13 +17,12 @@ const Gallerie =({id}) =>{
             if(data)
             {
             setgallerieposts(data.data.images)
-            console.log(data.data.images)
             setgallerie_loading(false)
         }})
         .catch(err => console.error(err))
     }
 
-    useEffect(fetch_gallerieposts , [id])
+    useEffect(fetch_gallerieposts , [id , gallerie_loading])
 
     return(
         <>

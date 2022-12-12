@@ -12,7 +12,7 @@ const GallerieGrid = ({posts}) => {
         <div className='grid-container'>
             {posts.map((e,index)=>{
                 return(
-                    <img src={e} />
+                    <img src={e} key={index} />
                 )
             }
             )
