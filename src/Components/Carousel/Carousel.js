@@ -4,9 +4,9 @@ import Loader from "../Loader/Loader";
 import './Carousel.css'
 
 
-const create_carousel_item = (carousel) =>{
+const create_carousel_item = (carousel , key) =>{
   return(
-    <Carousel.Item  >
+    <Carousel.Item key={key}  >
       
         <img
          className="d-block w-100 h-100 carousel-img"
@@ -17,7 +17,7 @@ const create_carousel_item = (carousel) =>{
   )
 }
 const generate_carousel = (carousels) => {
-  return carousels.map(create_carousel_item)
+  return carousels.map((e,index) => create_carousel_item(e,index))
 }
 
 

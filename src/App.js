@@ -9,6 +9,7 @@ import { Route,Routes, useNavigate } from 'react-router-dom';
 import {Navbar }from './Components/Navbar/Navbar';
 import { useState , useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
+// import {RouterOutlet} from 'react-router-outlet'
 
 
 
@@ -16,7 +17,26 @@ import { Helmet } from 'react-helmet-async';
 function App() {
   const [Id_lieu , setId_lieu] = useState()
   const navigate = useNavigate();
+  // const Routes = [
+  //   {
+  //     path :'/contact',
+  //     component : Contact
+  //   },
+  //   {
+  //     path : '/gallerie',
+  //     component : Gallerie({id : Id_lieu}),
+  //     canEnter : (id) =>{ return(id !== undefined)},
+  //     fallback : ''
+  //   },
+  //   {
+  //     path: '/services',
+  //     component : Services
+  //   },
+  //   {
+  //     component: Accueil
+  //   }
 
+  // ]
 
   const navigatetohome = () =>{
     navigate('/');
@@ -73,6 +93,7 @@ function App() {
           } />
           <Route path="/services" element={<Services />} />
         </Routes>
+        {/* <RouterOutlet routes={Routes} id={Id_lieu} /> */}
       </div>
       <Footer />
     </>

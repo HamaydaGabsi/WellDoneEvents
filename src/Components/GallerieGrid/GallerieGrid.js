@@ -13,7 +13,7 @@ const GallerieGrid = ({posts}) => {
             {/*
             {posts.map((e,index)=>{
                 return(
-                    <img src={e} />
+                    <img src={e} key={index} />
                 )
             }
             )

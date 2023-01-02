@@ -48,7 +48,6 @@ const Services = () => {
         fetch('/api/services/active/post')
         .then(response => response.json())
         .then(data => {
-            console.log(data)
             setcards(data.data)
             setcards_loading(false)
         })
@@ -66,12 +65,12 @@ const Services = () => {
     }
   };
 
-  const create_cardsRow = (row_cards) => {
-    return <Cardsrow cards={row_cards} />;
+  const create_cardsRow = (row_cards , index) => {
+    return <Cardsrow key={index} cards={row_cards} />;
   };
   const generate_card_container = (cards) => {
     slice_cards(cards, nbCards);
-    return cards_row_array.map(create_cardsRow);
+    return cards_row_array.map((e,index) => create_cardsRow(e,index));
   };
   return (
     <div className="CardsContainer d-flex ">

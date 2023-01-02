@@ -7,13 +7,13 @@ const PostsContainer = ({posts  , loading}) =>{
 
     const createPost = (post,index) =>{
         return (
-            <HomePost order={index} post= {post} />
+            <HomePost key={index} order={index} post= {post} />
         )
     }
 
     const generate_posts = (posts) =>{
-        return posts.map(
-            createPost
+        return posts.map((e,index) =>
+            createPost(e,index)
         )
     }
     return (

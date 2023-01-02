@@ -18,8 +18,8 @@ const HomePost = ({ order, post }) => {
       <div className="d-flex h-100 post-caption">
         <div className="caption-title title"> {post.title} </div>
         <div className="caption-p commontext">
-          {post.description.split("\n").map((i) => {
-            return <p>{i}</p>;
+          {post.description.split("\n").map((i , index) => {
+            return <p key={index}>{i}</p>;
           })}
         </div>
       </div>
