@@ -7,7 +7,7 @@ const Contact = () =>{
    const  [socials , setsocials] = useState({})
 
     const fetch_socials = () => {
-        fetch('http://localhost:5000/api/social/get/social')
+        fetch('/api/social/get/social')
         .then(response => response.json())
         .then(data => {
             console.log(data.data[0])

@@ -38,7 +38,7 @@ const ContactForm = () => {
     button.classList.add('sent')
   }
   const send_from_info = (info) => {
-    fetch('http://localhost:5000/api/contact/add/contact',{
+    fetch('/api/contact/add/contact',{
       method: 'POST',
       headers: {'content-type':'application/json'},
       body: JSON.stringify(info)

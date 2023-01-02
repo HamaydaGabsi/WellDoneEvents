@@ -14,7 +14,7 @@ const Accueil = () => {
   const [postsLoading , setpostsloading] = useState(true)
 
   const fetch_carousel = () =>{
-    fetch('http://localhost:5000/api/carousel/active/carousels')
+    fetch('/api/carousel/active/carousels')
     .then(response => response.json())
     .then((data) =>{ 
         setcarousels(data.data)
@@ -29,7 +29,7 @@ const [posts , setposts] = useState([])
 
 
 const fetch_posts = () =>{
-    fetch('http://localhost:5000/api/accueil/active/post')
+    fetch('/api/accueil/active/post')
     .then(response => response.json())
     .then(data => {
         setposts(data.data)

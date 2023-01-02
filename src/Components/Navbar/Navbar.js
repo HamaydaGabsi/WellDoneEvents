@@ -11,7 +11,7 @@ const Navbar = ({
   const [activelink , setactivelink] = useState(sessionStorage.getItem('activelink'))
   const [lieux, setlieux] = useState([]);
   const fetch_lieux = () => {
-    fetch("http://localhost:5000/api/lieux/get/all/active")
+    fetch("/api/lieux/get/all/active")
       .then((response) => response.json())
       .then((data) => setlieux(data.data))
       .catch((err) => console.error(err));
@@ -111,13 +111,14 @@ const Navbar = ({
     }
     })
   return (
+    
     <nav
       className="fixed-top bg-dark d-flex"
       id="nav"
       onClick={(e) => {
         const gallerie = document.getElementById("gallerie");
         if (e.target === gallerie) {
-          document.getElementById("nav").classList.add("doubleNav");
+          //document.getElementById("nav").classList.add("doubleNav");
           document.getElementById("body").classList.add("doubleNav-active");
         }
       }}

@@ -45,7 +45,7 @@ const Services = () => {
     const [cards_loading , setcards_loading] = useState(true)
 
     const fetch_cards=() => {
-        fetch('http://localhost:5000/api/services/active/post')
+        fetch('/api/services/active/post')
         .then(response => response.json())
         .then(data => {
             console.log(data)

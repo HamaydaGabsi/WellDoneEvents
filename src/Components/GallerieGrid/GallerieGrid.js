@@ -10,6 +10,7 @@ const GallerieGrid = ({posts}) => {
 
     return (
         <div className='grid-container'>
+            {/*
             {posts.map((e,index)=>{
                 return(
                     <img src={e} />
@@ -17,6 +18,7 @@ const GallerieGrid = ({posts}) => {
             }
             )
             }
+              */}
         </div>
     )
 }

@@ -2,16 +2,18 @@ import React , {useEffect , useState} from 'react';
 import GallerieGrid from '../Components/GallerieGrid/GallerieGrid';
 import Loader from '../Components/Loader/Loader';
 import { Helmet } from 'react-helmet-async';
+import SoonMessage from '../Components/ComingSoon';
+
 
 
 
 const Gallerie =({id}) =>{
    
     const [gallerieposts , setgallerieposts] = useState([])
-    const [gallerie_loading , setgallerie_loading] = useState(true)
+    const [gallerie_loading , setgallerie_loading] = useState(false)  //change to true
     const fetch_gallerieposts = () => {
         if(id!==undefined)
-        fetch(`http://localhost:5000/api/lieux/get/active/lieux/${id}`)
+        fetch(`/api/lieux/get/active/lieux/${id}`)
         .then(response => response.json())
         .then(data => {
             if(data)
@@ -26,6 +28,7 @@ const Gallerie =({id}) =>{
     useEffect(fetch_gallerieposts , [id])
 
     return(
+        
         <>
         <Helmet>
           <meta name='description' content='Gallerie Page' />
@@ -34,6 +37,11 @@ const Gallerie =({id}) =>{
             {gallerie_loading ?<div className='gallerie-loader d-flex'> <Loader/> </div> : <GallerieGrid posts = {gallerieposts} />}
             
         </div>
+      <div>
+        <SoonMessage /> 
+        {/*coming soon message*/}
+      </div>
+
         </>
     )
    
