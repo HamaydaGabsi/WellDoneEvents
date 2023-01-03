@@ -1,5 +1,7 @@
 .info-list {
     font-size: 1.2em!important;
+    align-items: center;
+
 }
 #welldone-facebook{
    text-decoration: none!important;
