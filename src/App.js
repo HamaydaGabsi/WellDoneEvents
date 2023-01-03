@@ -73,6 +73,7 @@ function App() {
       <Helmet>
         <title>Well Done Events</title>
         <meta name='description' content='Well Done Events' />
+        <link rel="icon" href="../assests/WDlogo.png" />
       </Helmet>
       <Navbar
         navigation={navigation}

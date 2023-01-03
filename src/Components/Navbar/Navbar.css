@@ -68,7 +68,7 @@ nav {
     border: none;
 }
 .secondary-navbar-bg{
-    background-color:rgb(33, 37, 41) ;
+    background-color:white ; {/*change to black */}
     width: 100%;
     position: relative;
     justify-content: flex-start;
