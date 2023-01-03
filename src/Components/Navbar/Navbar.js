@@ -214,7 +214,7 @@ const Navbar = ({
           <div className="right-arrow arrow" onClick={rightArrowClick} id='rightArrow'>
           <span>&gt;</span>
           </div>
-        <div className="secondary-navbar " id="nav2">
+        <div className="secondary-navbar " id="nav2" hidden>
       
           
         {  lieux.map((e, index) => {
